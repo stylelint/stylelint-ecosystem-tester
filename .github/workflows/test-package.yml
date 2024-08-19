@@ -89,7 +89,7 @@ jobs:
             exit 1
           fi
 
-          npm pkg get overrides;
+          npm pkg get;
 
       - name: Install dependencies
         id: install-dependencies
