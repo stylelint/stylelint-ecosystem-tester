@@ -95,7 +95,6 @@ jobs:
           npm pkg get;
 
       - name: Install dependencies
-        id: install-dependencies
         working-directory: ${{ steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
@@ -107,8 +106,8 @@ jobs:
           fi
 
       - name: Install Stylelint ${{ inputs.stylelint-version }}
-        id: install-stylelint
         working-directory: ${{ steps.repo-info.outputs.directory }}
+        if: ${{ ! inputs.set-overrides-command }}
         env:
           STYLELINT_VERSION: ${{ inputs.stylelint-version }}
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
@@ -130,7 +129,6 @@ jobs:
           fi
 
       - name: Run build
-        id: build
         working-directory: ${{ steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
@@ -142,7 +140,6 @@ jobs:
           fi
 
       - name: Run test
-        id: test
         working-directory: ${{ steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
