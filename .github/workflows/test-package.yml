@@ -89,6 +89,8 @@ jobs:
             exit 1
           fi
 
+          npm pkg get overrides;
+
       - name: Install dependencies
         id: install-dependencies
         working-directory: ${{ steps.repo-info.outputs.directory }}
