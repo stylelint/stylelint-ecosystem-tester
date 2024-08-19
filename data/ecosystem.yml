@@ -43,7 +43,7 @@ packages:
       'stylelint-less',
       {
         set-overrides-command: 'npm pkg set pnpm.overrides.stylelint',
-        install-command: 'pnpm i',
+        install-command: 'pnpm install --no-frozen-lockfile',
         list-installed-versions-command: 'pnpm list stylelint',
         build-command: 'pnpm -r build',
         test-command: 'pnpm -r test',
