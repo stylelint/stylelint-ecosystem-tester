@@ -35,8 +35,17 @@ function generateWorkflow({
 	workflow.jobs.test.with.package = pkg;
 	workflow.jobs.test.with['stylelint-version'] = stylelintVersion;
 
+	if (config['set-overrides-command']) {
+		workflow.jobs.test.with['set-overrides-command'] = config['set-overrides-command'];
+	}
+
 	if (config['install-command']) {
 		workflow.jobs.test.with['install-command'] = config['install-command'];
+	}
+
+	if (config['list-installed-versions-command']) {
+		workflow.jobs.test.with['list-installed-versions-command'] =
+			config['list-installed-versions-command'];
 	}
 
 	if (config['build-command']) {

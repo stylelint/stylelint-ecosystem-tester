@@ -23,6 +23,8 @@ jobs:
     with:
       package: stylelint-less
       stylelint-version: stylelint@latest
+      set-overrides-command: npm pkg set pnpm.overrides.stylelint
       install-command: pnpm i
+      list-installed-versions-command: pnpm list stylelint
       build-command: pnpm -r build
       test-command: pnpm -r test

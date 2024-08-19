@@ -11,10 +11,17 @@ on:
         type: string
         description: The Stylelint version to test
         required: true
+      set-overrides-command:
+        type: string
+        description: The command to set dependency overrides
       install-command:
         type: string
         description: The install command to run
         default: 'npm install --no-audit'
+      list-installed-versions-command:
+        type: string
+        description: The list dependencies command to run
+        default: 'npm list stylelint'
       build-command:
         type: string
         description: The build command to run
@@ -71,6 +78,17 @@ jobs:
           npm install --global yarn
           echo "yarn: $(yarn --version)"
 
+      - name: Set dependency overrides
+        env:
+          SET_OVERRIDES_COMMAND: ${{ inputs.set-overrides-command }}
+          STYLELINT_VERSION: ${{ inputs.stylelint-version }}
+        if: ${{ inputs.set-overrides-command }}
+        run: |
+          if ! eval "$SET_OVERRIDES_COMMAND=$STYLELINT_VERSION"; then
+            echo "::error ::Setting dependency overrides failed."
+            exit 1
+          fi
+
       - name: Install dependencies
         id: install-dependencies
         working-directory: ${{ steps.repo-info.outputs.directory }}
@@ -92,6 +110,17 @@ jobs:
         run: |
           if ! npm install --no-audit --no-save "${STYLELINT_VERSION}"; then
             echo "::error ::The Stylelint (${STYLELINT_VERSION}) installation failed. Visit ${PACKAGE_URL}"
+            exit 1
+          fi
+
+      - name: List installed Stylelint versions
+        working-directory: ${{ steps.repo-info.outputs.directory }}
+        env:
+          PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
+          LIST_INSTALLED_VERSIONS_COMMAND: ${{ inputs.list-installed-versions-command }}
+        run: |
+          if ! eval "$LIST_INSTALLED_VERSIONS_COMMAND"; then
+            echo "::error ::Listing dependencies failed."
             exit 1
           fi
 
