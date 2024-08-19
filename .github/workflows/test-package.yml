@@ -11,6 +11,9 @@ on:
         type: string
         description: The Stylelint version to test
         required: true
+      stylelint-version-override:
+        type: string
+        description: The Stylelint version override
       set-overrides-command:
         type: string
         description: The command to set dependency overrides
@@ -81,10 +84,10 @@ jobs:
       - name: Set dependency overrides
         env:
           SET_OVERRIDES_COMMAND: ${{ inputs.set-overrides-command }}
-          STYLELINT_VERSION: ${{ inputs.stylelint-version }}
+          STYLELINT_VERSION_OVERRIDE: ${{ inputs.stylelint-version-override }}
         if: ${{ inputs.set-overrides-command }}
         run: |
-          if ! eval "$SET_OVERRIDES_COMMAND=$STYLELINT_VERSION"; then
+          if ! eval "$SET_OVERRIDES_COMMAND=$STYLELINT_VERSION_OVERRIDE"; then
             echo "::error ::Setting dependency overrides failed."
             exit 1
           fi

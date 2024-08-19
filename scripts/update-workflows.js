@@ -12,6 +12,7 @@ function generateWorkflow({
 	pkg,
 	config,
 	stylelintVersion,
+	stylelintVersionOverride,
 	template,
 	workflowFilePath,
 	workflowName,
@@ -37,6 +38,7 @@ function generateWorkflow({
 
 	if (config['set-overrides-command']) {
 		workflow.jobs.test.with['set-overrides-command'] = config['set-overrides-command'];
+		workflow.jobs.test.with['stylelint-version-override'] = stylelintVersionOverride;
 	}
 
 	if (config['install-command']) {
@@ -91,6 +93,7 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 		pkg,
 		config,
 		stylelintVersion: 'stylelint@latest',
+		stylelintVersionOverride: 'latest',
 		template: workflowTemplateContent,
 		workflowFilePath: latestStylelintWorkflowFilePath,
 		workflowName: pkg,
@@ -108,6 +111,7 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 		pkg,
 		config,
 		stylelintVersion: 'stylelint/stylelint',
+		stylelintVersionOverride: 'github:stylelint/stylelint',
 		template: workflowTemplateContent,
 		workflowFilePath: nextStylelintWorkflowFilePath,
 		workflowName: pkg,
