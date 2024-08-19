@@ -125,7 +125,7 @@ jobs:
         run: |
           if ! eval "$LIST_INSTALLED_VERSIONS_COMMAND"; then
             echo "::error ::Listing dependencies failed."
-            exit 1
+            # `npm list` has a non-zero exit code when overriding dependencies
           fi
 
       - name: Run build
