@@ -1,14 +1,14 @@
 packages:
   # In alphabetical order
   - '@primer/stylelint-config'
-  # - [
-  #     '@shopify/stylelint-plugin',
-  #     {
-  #       install-command: 'yarn',
-  #       list-installed-versions-command: 'yarn list --pattern stylelint',
-  #       test-command: 'NODE_OPTIONS="--experimental-vm-modules --no-warnings" npx jest --runInBand',
-  #     },
-  #   ]
+  - [
+      '@shopify/stylelint-plugin',
+      {
+        install-command: 'yarn',
+        list-installed-versions-command: 'yarn list --pattern stylelint',
+        test-command: 'NODE_OPTIONS="--experimental-vm-modules --no-warnings" npx jest --runInBand',
+      },
+    ]
   - '@stylistic/stylelint-config'
   - '@stylistic/stylelint-plugin'
   # - '@wordpress/stylelint-config'
