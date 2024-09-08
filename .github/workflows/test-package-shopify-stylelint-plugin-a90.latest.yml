@@ -24,6 +24,6 @@ jobs:
       package: '@shopify/stylelint-plugin'
       stylelint-version: stylelint@latest
       install-command: yarn
-      list-installed-versions-command: yarn list stylelint
+      list-installed-versions-command: yarn list --pattern stylelint
       test-command: NODE_OPTIONS="--experimental-vm-modules --no-warnings" npx jest
         --runInBand
