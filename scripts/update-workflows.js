@@ -12,6 +12,7 @@ function generateWorkflow({
 	pkg,
 	config,
 	stylelintVersion,
+	stylelintVersionOverride,
 	template,
 	workflowFilePath,
 	workflowName,
@@ -35,12 +36,26 @@ function generateWorkflow({
 	workflow.jobs.test.with.package = pkg;
 	workflow.jobs.test.with['stylelint-version'] = stylelintVersion;
 
-	if (config['test-command']) {
-		workflow.jobs.test.with['test-command'] = config['test-command'];
+	if (config['set-overrides-command']) {
+		workflow.jobs.test.with['set-overrides-command'] = config['set-overrides-command'];
+		workflow.jobs.test.with['stylelint-version-override'] = stylelintVersionOverride;
 	}
 
 	if (config['install-command']) {
 		workflow.jobs.test.with['install-command'] = config['install-command'];
+	}
+
+	if (config['list-installed-versions-command']) {
+		workflow.jobs.test.with['list-installed-versions-command'] =
+			config['list-installed-versions-command'];
+	}
+
+	if (config['build-command']) {
+		workflow.jobs.test.with['build-command'] = config['build-command'];
+	}
+
+	if (config['test-command']) {
+		workflow.jobs.test.with['test-command'] = config['test-command'];
 	}
 
 	return workflow;
@@ -78,6 +93,7 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 		pkg,
 		config,
 		stylelintVersion: 'stylelint@latest',
+		stylelintVersionOverride: 'latest',
 		template: workflowTemplateContent,
 		workflowFilePath: latestStylelintWorkflowFilePath,
 		workflowName: pkg,
@@ -95,6 +111,7 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 		pkg,
 		config,
 		stylelintVersion: 'stylelint/stylelint',
+		stylelintVersionOverride: 'github:stylelint/stylelint',
 		template: workflowTemplateContent,
 		workflowFilePath: nextStylelintWorkflowFilePath,
 		workflowName: pkg,
