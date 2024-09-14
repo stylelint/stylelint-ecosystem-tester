@@ -11,7 +11,7 @@ packages:
     ]
   - '@stylistic/stylelint-config'
   - '@stylistic/stylelint-plugin'
-  # - '@wordpress/stylelint-config'
+  - '@wordpress/stylelint-config'
   - 'stylelint-actions-formatters'
   - 'stylelint-checkstyle-reporter'
   # - 'stylelint-codeframe-formatter'
