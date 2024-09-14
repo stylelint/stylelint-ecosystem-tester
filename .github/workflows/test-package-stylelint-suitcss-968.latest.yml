@@ -23,3 +23,5 @@ jobs:
     with:
       package: stylelint-suitcss
       stylelint-version: stylelint@latest
+      install-command: yarn
+      list-installed-versions-command: yarn list --pattern stylelint
