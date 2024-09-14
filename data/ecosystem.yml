@@ -50,7 +50,7 @@ packages:
       },
     ]
   - 'stylelint-media-use-custom-media'
-  # - 'stylelint-no-unsupported-browser-features'
+  - 'stylelint-no-unsupported-browser-features'
   - 'stylelint-order'
   - 'stylelint-plugin-defensive-css'
   - 'stylelint-plugin-logical-css'
