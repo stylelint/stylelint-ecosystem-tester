@@ -60,7 +60,7 @@ packages:
   - 'stylelint-scss'
   - 'stylelint-selector-bem-pattern'
   - 'stylelint-stylus'
-  # - 'stylelint-suitcss'
+  - 'stylelint-suitcss'
   - 'stylelint-use-logical'
   - 'stylelint-use-logical-spec'
   - 'stylelint-use-nesting'
