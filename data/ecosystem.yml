@@ -14,7 +14,7 @@ packages:
   # - '@wordpress/stylelint-config'
   - 'stylelint-actions-formatters'
   - 'stylelint-checkstyle-reporter'
-  # - 'stylelint-codeframe-formatter'
+  - 'stylelint-codeframe-formatter'
   - 'stylelint-config-clean-order'
   - 'stylelint-config-css-modules'
   - 'stylelint-config-html'
