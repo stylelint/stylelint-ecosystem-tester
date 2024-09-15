@@ -19,7 +19,6 @@ packages:
   - 'stylelint-config-html'
   - 'stylelint-config-idiomatic-order'
   - 'stylelint-config-property-sort-order-smacss'
-  # - 'stylelint-config-rational-order'
   - 'stylelint-config-recess-order'
   - 'stylelint-config-recommended'
   - 'stylelint-config-recommended-scss'
