@@ -50,11 +50,11 @@
     "@stylelint/remark-preset": "^5.1.1",
     "eslint": "^8.57.0",
     "eslint-config-stylelint": "^22.0.0",
-    "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "remark-cli": "^12.0.1",
-    "yaml": "^2.5.0"
+    "yaml": "^2.5.1"
   },
   "engines": {
     "node": ">=20"
