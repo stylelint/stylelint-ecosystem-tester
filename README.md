@@ -97,3 +97,15 @@ An eligible package should meet the following criteria:
 ## Contributing
 
 We welcome issues or pull requests. Please read the [contributing guidelines](CONTRIBUTING.md) for details.
+
+## Maintenance
+
+This section is for maintainers.
+
+### How to test all packages
+
+Run this command on your terminal. [`gh`](https://cli.github.com/) is required.
+
+```shell
+for file in .github/workflows/test-package-*.yml; do gh workflow run "${file}"; done
+```
