@@ -13,7 +13,7 @@ packages:
   - '@stylistic/stylelint-plugin'
   - [
       '@wordpress/stylelint-config',
-      { test-command: 'npm run test:unit -- --testPathPattern packages/stylelint-config' },
+      { test-command: 'npm run test:unit -- --testPathPattern packages/stylelint-config ' },
     ]
   - 'stylelint-actions-formatters'
   - 'stylelint-checkstyle-reporter'
