@@ -23,4 +23,5 @@ jobs:
     with:
       package: '@wordpress/stylelint-config'
       stylelint-version: stylelint/stylelint
+      working-directory-is-workspace: true
       test-command: npm run test:unit -- --testPathPattern packages/stylelint-config
