@@ -14,13 +14,11 @@ packages:
   # - '@wordpress/stylelint-config'
   - 'stylelint-actions-formatters'
   - 'stylelint-checkstyle-reporter'
-  # - 'stylelint-codeframe-formatter'
   - 'stylelint-config-clean-order'
   - 'stylelint-config-css-modules'
   - 'stylelint-config-html'
   - 'stylelint-config-idiomatic-order'
   - 'stylelint-config-property-sort-order-smacss'
-  # - 'stylelint-config-rational-order'
   - 'stylelint-config-recess-order'
   - 'stylelint-config-recommended'
   - 'stylelint-config-recommended-scss'
@@ -50,7 +48,7 @@ packages:
       },
     ]
   - 'stylelint-media-use-custom-media'
-  # - 'stylelint-no-unsupported-browser-features'
+  - 'stylelint-no-unsupported-browser-features'
   - 'stylelint-order'
   - 'stylelint-plugin-defensive-css'
   - 'stylelint-plugin-logical-css'
