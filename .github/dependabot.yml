@@ -9,8 +9,8 @@ updates:
       - 'pr: dependencies'
     versioning-strategy: increase
     groups:
-      development-dependencies:
-        dependency-type: 'development'
+      dev-deps:
+        dependency-type: development
     cooldown:
       default-days: 7
 
