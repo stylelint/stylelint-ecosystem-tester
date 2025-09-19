@@ -65,6 +65,9 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: 'lts/*'
+          # NOTE: To avoid the error "Unable to locate executable file: pnpm", it disables cache.
+          # Ref https://github.com/actions/setup-node/issues/1357
+          package-manager-cache: false
 
       - name: Install latest npm
         run: |
