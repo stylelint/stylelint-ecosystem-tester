@@ -9,8 +9,10 @@ updates:
       - 'pr: dependencies'
     versioning-strategy: increase
     groups:
-      development-dependencies:
-        dependency-type: 'development'
+      dev-deps:
+        dependency-type: development
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: github-actions
     directory: '/'
@@ -19,3 +21,5 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - 'pr: dependencies'
+    cooldown:
+      default-days: 7

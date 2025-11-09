@@ -60,14 +60,17 @@ jobs:
           echo "directory=${directory}" >> "${GITHUB_OUTPUT}"
 
       - name: Checkout ${{ steps.repo-info.outputs.fullname }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           repository: ${{ steps.repo-info.outputs.fullname }}
 
       - name: Setup Node.js LTS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: 'lts/*'
+          # NOTE: To avoid the error "Unable to locate executable file: pnpm", it disables cache.
+          # Ref https://github.com/actions/setup-node/issues/1357
+          package-manager-cache: false
 
       - name: Install latest npm
         run: |
