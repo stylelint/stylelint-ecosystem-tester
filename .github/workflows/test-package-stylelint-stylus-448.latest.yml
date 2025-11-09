@@ -16,6 +16,8 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-stylelint-stylus-448-latest
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   test:
     uses: ./.github/workflows/test-package.yml

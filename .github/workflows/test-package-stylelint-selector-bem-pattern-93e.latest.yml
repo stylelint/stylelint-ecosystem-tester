@@ -14,9 +14,10 @@ on:
   schedule:
     - cron: 0 0 * * *
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref
-    }}-stylelint-selector-bem-pattern-93e-latest
+  group: ${{ github.workflow }}-${{ github.ref }}-stylelint-selector-bem-pattern-93e-latest
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   test:
     uses: ./.github/workflows/test-package.yml
