@@ -58,7 +58,10 @@ packages:
   - 'stylelint-scss'
   - 'stylelint-selector-bem-pattern'
   - 'stylelint-stylus'
-  # - 'stylelint-suitcss'
+  - [
+      'stylelint-suitcss',
+      { install-command: 'yarn', list-installed-versions-command: 'yarn list --pattern stylelint' },
+    ]
   - 'stylelint-use-logical'
   - 'stylelint-use-logical-spec'
   - 'stylelint-use-nesting'
