@@ -16,6 +16,8 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-primer-stylelint-config-0ab-next
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   test:
     uses: ./.github/workflows/test-package.yml

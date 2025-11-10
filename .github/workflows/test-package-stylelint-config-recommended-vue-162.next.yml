@@ -14,9 +14,10 @@ on:
   schedule:
     - cron: 0 0 * * *
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref
-    }}-stylelint-config-recommended-vue-162-next
+  group: ${{ github.workflow }}-${{ github.ref }}-stylelint-config-recommended-vue-162-next
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   test:
     uses: ./.github/workflows/test-package.yml

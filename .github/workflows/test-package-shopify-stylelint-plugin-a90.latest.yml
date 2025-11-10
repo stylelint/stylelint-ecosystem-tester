@@ -16,6 +16,8 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-shopify-stylelint-plugin-a90-latest
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   test:
     uses: ./.github/workflows/test-package.yml
@@ -25,5 +27,4 @@ jobs:
       stylelint-version: stylelint@latest
       install-command: yarn
       list-installed-versions-command: yarn list --pattern stylelint
-      test-command: NODE_OPTIONS="--experimental-vm-modules --no-warnings" npx jest
-        --runInBand
+      test-command: NODE_OPTIONS="--experimental-vm-modules --no-warnings" npx jest --runInBand
