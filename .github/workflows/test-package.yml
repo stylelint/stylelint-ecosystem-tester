@@ -14,6 +14,9 @@ on:
       stylelint-version-override:
         type: string
         description: The Stylelint version override
+      working-directory-is-workspace:
+        type: boolean
+        description: Run all commands from the workspace root
       set-overrides-command:
         type: string
         description: The command to set dependency overrides
@@ -101,7 +104,7 @@ jobs:
           npm pkg get;
 
       - name: Install dependencies
-        working-directory: ${{ steps.repo-info.outputs.directory }}
+        working-directory: ${{ inputs.working-directory-is-workspace && github.workspace || steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
           INSTALL_COMMAND: ${{ inputs.install-command }}
@@ -112,7 +115,7 @@ jobs:
           fi
 
       - name: Install Stylelint ${{ inputs.stylelint-version }}
-        working-directory: ${{ steps.repo-info.outputs.directory }}
+        working-directory: ${{ inputs.working-directory-is-workspace && github.workspace || steps.repo-info.outputs.directory }}
         if: ${{ ! inputs.set-overrides-command }}
         env:
           STYLELINT_VERSION: ${{ inputs.stylelint-version }}
@@ -124,7 +127,7 @@ jobs:
           fi
 
       - name: List installed Stylelint versions
-        working-directory: ${{ steps.repo-info.outputs.directory }}
+        working-directory: ${{ inputs.working-directory-is-workspace && github.workspace || steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
           LIST_INSTALLED_VERSIONS_COMMAND: ${{ inputs.list-installed-versions-command }}
@@ -135,7 +138,7 @@ jobs:
           fi
 
       - name: Run build
-        working-directory: ${{ steps.repo-info.outputs.directory }}
+        working-directory: ${{ inputs.working-directory-is-workspace && github.workspace || steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
           BUILD_COMMAND: ${{ inputs.build-command }}
@@ -146,7 +149,7 @@ jobs:
           fi
 
       - name: Run test
-        working-directory: ${{ steps.repo-info.outputs.directory }}
+        working-directory: ${{ inputs.working-directory-is-workspace && github.workspace || steps.repo-info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
           TEST_COMMAND: ${{ inputs.test-command }}

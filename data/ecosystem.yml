@@ -11,7 +11,14 @@ packages:
     ]
   - '@stylistic/stylelint-config'
   - '@stylistic/stylelint-plugin'
-  # - '@wordpress/stylelint-config'
+  - [
+      '@wordpress/stylelint-config',
+      {
+        working-directory-is-workspace: true,
+        build-command: 'exit 0',
+        test-command: 'npm run test:unit -- --testPathPattern packages/stylelint-config',
+      },
+    ]
   - 'stylelint-actions-formatters'
   - 'stylelint-checkstyle-reporter'
   - 'stylelint-config-clean-order'

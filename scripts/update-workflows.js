@@ -36,6 +36,10 @@ function generateWorkflow({
 	workflow.jobs.test.with.package = pkg;
 	workflow.jobs.test.with['stylelint-version'] = stylelintVersion;
 
+	if (config['working-directory-is-workspace']) {
+		workflow.jobs.test.with['working-directory-is-workspace'] = true;
+	}
+
 	if (config['set-overrides-command']) {
 		workflow.jobs.test.with['set-overrides-command'] = config['set-overrides-command'];
 		workflow.jobs.test.with['stylelint-version-override'] = stylelintVersionOverride;
