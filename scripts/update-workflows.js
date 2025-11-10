@@ -101,7 +101,7 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 	});
 
 	const latestWorkflowFile = new URL(`../${latestStylelintWorkflowFilePath}`, import.meta.url);
-	const latestWorkflowContent = stringify(latestStylelintWorkflow);
+	const latestWorkflowContent = stringify(latestStylelintWorkflow, { lineWidth: 0 });
 
 	writeFileSync(fileURLToPath(latestWorkflowFile), latestWorkflowContent, 'utf8');
 
@@ -119,7 +119,7 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 	});
 
 	const nextWorkflowFile = new URL(`../${nextStylelintWorkflowFilePath}`, import.meta.url);
-	const nextWorkflowContent = stringify(nextStylelintWorkflow);
+	const nextWorkflowContent = stringify(nextStylelintWorkflow, { lineWidth: 0 });
 
 	writeFileSync(fileURLToPath(nextWorkflowFile), nextWorkflowContent, 'utf8');
 });
