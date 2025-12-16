@@ -110,9 +110,8 @@ ecosystemData.packages.forEach((packageConfig, index) => {
 		concurrencyGroup: `\${{ github.workflow }}-\${{ github.ref }}-${slug}-next`,
 		pkg,
 		config,
-		// TODO: Remove "v17" after Stylelint 17.0.0 is released.
-		stylelintVersion: 'stylelint/stylelint#v17',
-		stylelintVersionOverride: 'github:stylelint/stylelint#v17',
+		stylelintVersion: 'stylelint/stylelint',
+		stylelintVersionOverride: 'github:stylelint/stylelint',
 		template: workflowTemplateContent,
 		workflowFilePath: nextStylelintWorkflowFilePath,
 		workflowName: pkg,

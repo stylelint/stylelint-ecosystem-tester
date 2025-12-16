@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-declaration-strict-value
-      stylelint-version: stylelint/stylelint#v17
+      stylelint-version: stylelint/stylelint

@@ -118,7 +118,7 @@ jobs:
           STYLELINT_VERSION: ${{ inputs.stylelint-version }}
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
         run: |
-          if ! npm install --no-audit --no-save --force "${STYLELINT_VERSION}"; then
+          if ! npm install --no-audit --no-save "${STYLELINT_VERSION}"; then
             echo "::error ::The Stylelint (${STYLELINT_VERSION}) installation failed. Visit ${PACKAGE_URL}"
             exit 1
           fi
