@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-media-use-custom-media
-      stylelint-version: stylelint/stylelint
+      stylelint-version: stylelint/stylelint#v17

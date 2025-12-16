@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-plugin-defensive-css
-      stylelint-version: stylelint/stylelint
+      stylelint-version: stylelint/stylelint#v17
