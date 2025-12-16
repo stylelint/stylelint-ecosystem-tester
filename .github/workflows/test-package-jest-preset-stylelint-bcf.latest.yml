@@ -1,0 +1,27 @@
+name: jest-preset-stylelint
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/test-package.yml
+      - .github/workflows/test-package-jest-preset-stylelint-bcf.latest.yml
+  pull_request:
+    paths:
+      - .github/workflows/test-package.yml
+      - .github/workflows/test-package-jest-preset-stylelint-bcf.latest.yml
+  workflow_dispatch: null
+  schedule:
+    - cron: 0 0 * * *
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-jest-preset-stylelint-bcf-latest
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  test:
+    uses: ./.github/workflows/test-package.yml
+    name: latest
+    with:
+      package: jest-preset-stylelint
+      stylelint-version: stylelint@latest
