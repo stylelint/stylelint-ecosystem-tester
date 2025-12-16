@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-config-html
-      stylelint-version: stylelint/stylelint#v17
+      stylelint-version: stylelint/stylelint
