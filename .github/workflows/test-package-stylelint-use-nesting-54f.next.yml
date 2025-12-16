@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-use-nesting
-      stylelint-version: stylelint/stylelint
+      stylelint-version: stylelint/stylelint#v17

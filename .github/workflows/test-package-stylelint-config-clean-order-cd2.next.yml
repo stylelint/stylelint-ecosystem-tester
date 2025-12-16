@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-config-clean-order
-      stylelint-version: stylelint/stylelint
+      stylelint-version: stylelint/stylelint#v17

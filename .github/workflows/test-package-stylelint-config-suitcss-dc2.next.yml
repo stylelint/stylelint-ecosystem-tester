@@ -24,4 +24,4 @@ jobs:
     name: next
     with:
       package: stylelint-config-suitcss
-      stylelint-version: stylelint/stylelint
+      stylelint-version: stylelint/stylelint#v17
