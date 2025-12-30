@@ -49,7 +49,15 @@ packages:
       },
     ]
   - 'stylelint-media-use-custom-media'
-  - 'stylelint-no-unsupported-browser-features'
+  - [
+      'stylelint-no-unsupported-browser-features',
+      {
+        set-overrides-command: 'npm pkg set pnpm.overrides.stylelint',
+        install-command: 'pnpm install --no-frozen-lockfile',
+        list-installed-versions-command: 'pnpm list --long --json stylelint',
+        test-command: 'pnpm test',
+      },
+    ]
   - 'stylelint-order'
   - 'stylelint-plugin-defensive-css'
   - 'stylelint-plugin-logical-css'
