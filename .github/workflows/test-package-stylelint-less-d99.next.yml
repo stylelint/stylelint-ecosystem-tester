@@ -27,7 +27,6 @@ jobs:
       stylelint-version: stylelint/stylelint#v17
       set-overrides-command: npm pkg set pnpm.overrides.stylelint
       stylelint-version-override: github:stylelint/stylelint#v17
-      install-command: pnpm install --no-frozen-lockfile
+      install-command: pnpm install --no-frozen-lockfile --ignore-scripts
       list-installed-versions-command: pnpm list --long --json stylelint
-      build-command: pnpm -r build
       test-command: pnpm -r test
