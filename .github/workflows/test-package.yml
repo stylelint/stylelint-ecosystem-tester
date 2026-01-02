@@ -81,7 +81,7 @@ jobs:
         run: |
           npm install --global pnpm
           echo "pnpm: $(pnpm --version)"
-          npm pkg set "pnpm.neverBuiltDependencies[]=stylelint"
+          npm pkg set "pnpm.onlyBuiltDependencies[]=stylelint"
 
       - name: Install yarn
         run: |
