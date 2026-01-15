@@ -24,9 +24,9 @@ jobs:
     name: next
     with:
       package: stylelint-less
-      stylelint-version: stylelint/stylelint#v17
+      stylelint-version: stylelint/stylelint
       set-overrides-command: npm pkg set pnpm.overrides.stylelint
-      stylelint-version-override: github:stylelint/stylelint#v17
+      stylelint-version-override: github:stylelint/stylelint
       install-command: pnpm install --no-frozen-lockfile --ignore-scripts
       list-installed-versions-command: pnpm list --long --json stylelint
       test-command: pnpm -r test
