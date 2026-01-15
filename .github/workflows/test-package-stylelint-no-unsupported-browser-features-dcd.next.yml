@@ -26,7 +26,7 @@ jobs:
       package: stylelint-no-unsupported-browser-features
       stylelint-version: stylelint/stylelint
       set-overrides-command: npm pkg set pnpm.overrides.stylelint
-      stylelint-version-override: github:stylelint/stylelint#v17
+      stylelint-version-override: github:stylelint/stylelint
       install-command: pnpm install --no-frozen-lockfile
       list-installed-versions-command: pnpm list --long --json stylelint
       test-command: pnpm test
