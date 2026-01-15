@@ -12,6 +12,7 @@ packages:
   - '@stylistic/stylelint-config'
   - '@stylistic/stylelint-plugin'
   # - '@wordpress/stylelint-config'
+  - 'jest-preset-stylelint'
   - 'stylelint-actions-formatters'
   - 'stylelint-checkstyle-reporter'
   - 'stylelint-config-clean-order'
@@ -41,14 +42,21 @@ packages:
       'stylelint-less',
       {
         set-overrides-command: 'npm pkg set pnpm.overrides.stylelint',
-        install-command: 'pnpm install --no-frozen-lockfile',
+        install-command: 'pnpm install --no-frozen-lockfile --ignore-scripts',
         list-installed-versions-command: 'pnpm list --long --json stylelint',
-        build-command: 'pnpm -r build',
         test-command: 'pnpm -r test',
       },
     ]
   - 'stylelint-media-use-custom-media'
-  - 'stylelint-no-unsupported-browser-features'
+  - [
+      'stylelint-no-unsupported-browser-features',
+      {
+        set-overrides-command: 'npm pkg set pnpm.overrides.stylelint',
+        install-command: 'pnpm install --no-frozen-lockfile',
+        list-installed-versions-command: 'pnpm list --long --json stylelint',
+        test-command: 'pnpm test',
+      },
+    ]
   - 'stylelint-order'
   - 'stylelint-plugin-defensive-css'
   - 'stylelint-plugin-logical-css'
@@ -59,6 +67,7 @@ packages:
   - 'stylelint-selector-bem-pattern'
   # - 'stylelint-stylus'
   # - 'stylelint-suitcss'
+  - 'stylelint-test-rule-node'
   - 'stylelint-use-logical'
   - 'stylelint-use-logical-spec'
   - 'stylelint-use-nesting'
