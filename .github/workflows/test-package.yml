@@ -73,8 +73,11 @@ jobs:
           package-manager-cache: false
 
       - name: Install latest npm
+        # TODO: Revert the version constraint to "latest" after the issue is resolved.
+        # npm v11.12.0 fails to install packages from GitHub.
+        # Ref https://github.com/npm/cli/issues/9133
         run: |
-          npm install --global npm@latest
+          npm install --global npm@'<11.12.0'
           echo "npm: $(npm --version)"
 
       - name: Install pnpm
