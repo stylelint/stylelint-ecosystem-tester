@@ -118,7 +118,10 @@ jobs:
           STYLELINT_VERSION: ${{ inputs.stylelint-version }}
           PACKAGE_URL: ${{ steps.repo-info.outputs.url }}
         run: |
-          if ! npm install --no-audit --no-save "${STYLELINT_VERSION}"; then
+          # NOTE: `--min-release-age=0` doesn't work with npm v11.13.0 for some reason.
+          npm config --location=project delete min-release-age
+
+          if ! npm install --no-audit --no-save --allow-git=all "${STYLELINT_VERSION}"; then
             echo "::error ::The Stylelint (${STYLELINT_VERSION}) installation failed. Visit ${PACKAGE_URL}"
             exit 1
           fi
