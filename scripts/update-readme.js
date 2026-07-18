@@ -1,44 +1,63 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import process from 'node:process';
 
-import { parse } from 'yaml';
+import testResults from './utils/testResults.js';
 
-import createNpmBadge from './utils/npm-badge.js';
-import createStatusBadge from './utils/status-badge.js';
-import generateSlug from './utils/slug.js';
-import workflowFilename from './utils/workflow-filename.js';
+function npmBadge(pkg) {
+	return `[![${pkg}](https://img.shields.io/npm/v/${pkg}.svg)](https://www.npmjs.com/package/${pkg})`;
+}
 
-// List all packages
-const ecosystemDataFile = new URL('../data/ecosystem.yml', import.meta.url);
-const ecosystemDataContent = readFileSync(ecosystemDataFile, 'utf8');
-const ecosystemData = parse(ecosystemDataContent);
+function statusEmoji(status) {
+	switch (status) {
+		case 'success':
+			return '✅';
+		case 'failure':
+			return '❌';
+		default:
+			return '❔';
+	}
+}
 
-const newPackageLines = [];
+const packageLines = [];
 
-newPackageLines.push('| Package | Latest Stylelint | Next Stylelint |');
-newPackageLines.push('| :------ | ----: |  ----: |');
+packageLines.push('| Package | Latest Stylelint | Next Stylelint |');
+packageLines.push('| :------ | :--------------: | :------------: |');
 
-ecosystemData.packages.forEach((packageConfig) => {
-	const [pkg] = [packageConfig].flat();
+let packagesCount = 0;
 
-	const slug = generateSlug(pkg);
-	const latestBadge = createStatusBadge(workflowFilename(slug, 'latest'), 'latest');
-	const nextBadge = createStatusBadge(workflowFilename(slug, 'next'), 'next');
+for (const [pkg, result] of Object.entries(testResults)) {
+	packageLines.push(
+		`| ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
+	);
+	packagesCount += 1;
+}
 
-	newPackageLines.push(`| ${createNpmBadge(pkg)} | ${latestBadge} | ${nextBadge} |`);
-});
+packageLines.push('');
+packageLines.push(`Total ${packagesCount} packages`);
 
-newPackageLines.push('');
-newPackageLines.push(`Total ${ecosystemData.packages.length} packages`);
-
-const readmeFile = new URL('../README.md', import.meta.url);
+const readmeFile = path.relative(
+	process.cwd(),
+	fileURLToPath(new URL('../README.md', import.meta.url)),
+);
 const readmeLines = readFileSync(readmeFile, 'utf8').split('\n');
 const startLineIndex = readmeLines.indexOf('<!-- START:PACKAGES -->');
 const endLineIndex = readmeLines.indexOf('<!-- END:PACKAGES -->');
 
-readmeLines.splice(startLineIndex + 1, endLineIndex - startLineIndex - 1, ...newPackageLines);
+readmeLines.splice(startLineIndex + 1, endLineIndex - startLineIndex - 1, ...packageLines);
 
 writeFileSync(readmeFile, readmeLines.join('\n'), 'utf8');
 
-execSync(`npx prettier --write "${fileURLToPath(readmeFile)}"`);
+execFileSync('npx', ['prettier', '--write', readmeFile]);
+
+const diff = execFileSync('git', ['diff', '--color', readmeFile]).toString();
+
+if (diff.trim().length === 0) {
+	process.stdout.write(`${readmeFile} is not updated.\n`);
+} else {
+	process.stdout.write(`${readmeFile} is updated.\n`);
+	process.stdout.write(`${'-'.repeat(32)}\n`);
+	process.stdout.write(`${diff}\n`);
+}
