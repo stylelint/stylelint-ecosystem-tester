@@ -21,9 +21,13 @@ function statusEmoji(status) {
 	}
 }
 
+const latestStylelintVersion = execFileSync('npm', ['view', 'stylelint', 'version'])
+	.toString()
+	.trim();
+
 const packageLines = [];
 
-packageLines.push('| Package | npm | Latest Stylelint | Next Stylelint |');
+packageLines.push(`| Package | npm | Stylelint ${latestStylelintVersion} | Stylelint HEAD |`);
 packageLines.push('| :------ | :-- | :--------------: | :------------: |');
 
 let packagesCount = 0;
