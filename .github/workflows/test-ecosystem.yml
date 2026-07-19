@@ -96,8 +96,8 @@ jobs:
             echo "url=${url}"
             echo "fullname=${fullname}"
             echo "directory=${directory}"
-            jq -r --arg name "${PACKAGE}" '.[$name] | to_entries[] | "\(.key)=\(.value|tojson)"' <<< "${PACKAGES}"
-            jq -r --arg ver "${STYLELINT_VERSION}" '.[$ver] | to_entries[] | "\(.key)=\(.value|tojson)"' <<< "${STYLELINT_INFO}"
+            jq -r --arg name "${PACKAGE}" '.[$name] | to_entries[] | "\(.key)=\(.value)"' <<< "${PACKAGES}"
+            jq -r --arg ver "${STYLELINT_VERSION}" '.[$ver] | to_entries[] | "\(.key)=\(.value)"' <<< "${STYLELINT_INFO}"
           } >> "${GITHUB_OUTPUT}"
 
       - name: Checkout ${{ steps.info.outputs.fullname }}
