@@ -181,7 +181,7 @@ jobs:
           LIST_COMMAND: ${{ steps.info.outputs.list-command }}
         run: |
           if ! eval "${LIST_COMMAND}"; then
-            echo "::error ::Listing dependencies failed."
+            echo "::error ::'${LIST_COMMAND}' failed. Visit ${PACKAGE_URL}"
             # `npm list` has a non-zero exit code when overriding dependencies
           fi
 
