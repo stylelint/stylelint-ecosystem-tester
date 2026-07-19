@@ -6,6 +6,7 @@ packages:
     test-command: 'NODE_OPTIONS="--experimental-vm-modules --no-warnings" npx jest --runInBand'
   '@stylistic/stylelint-config':
     package-manager: 'pnpm'
+    test-command: 'make test'
   '@stylistic/stylelint-plugin':
     package-manager: 'pnpm'
   # '@wordpress/stylelint-config': {}
