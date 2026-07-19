@@ -1,0 +1,317 @@
+name: Test Ecosystem
+
+on:
+  push:
+    branches: [main]
+    paths: [data/ecosystem.yml]
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: Space- or comma-separated package names to test (blank = all)
+        type: string
+        required: false
+  schedule:
+    - cron: '0 0 * * *' # Every day at 00:00 UTC
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  prepare:
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    outputs:
+      packages: ${{ steps.set-outputs.outputs.packages }}
+      package-names: ${{ steps.set-outputs.outputs.package-names }}
+      stylelint-info: ${{ steps.set-outputs.outputs.stylelint-info }}
+      stylelint-versions: ${{ steps.set-outputs.outputs.stylelint-versions }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Set outputs
+        id: set-outputs
+        env:
+          INPUT_PACKAGES: ${{ inputs.packages }}
+        run: |
+          prepared_data=$(node scripts/prepare-test.js "${INPUT_PACKAGES}" | jq -c '.')
+          packages=$(jq -c '.packages' <<< "${prepared_data}")
+          package_names=$(jq -c 'keys' <<< "${packages}")
+          stylelint_info=$(jq -c '.stylelint' <<< "${prepared_data}")
+          stylelint_versions=$(jq -c 'keys' <<< "${stylelint_info}")
+
+          {
+            echo "packages=${packages}"
+            echo "package-names=${package_names}"
+            echo "stylelint-info=${stylelint_info}"
+            echo "stylelint-versions=${stylelint_versions}"
+          } >> "${GITHUB_OUTPUT}"
+
+  test:
+    name: ${{ matrix.package }} (${{ matrix.stylelint-version }})
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.prepare.outputs.package-names) }}
+        stylelint-version: ${{ fromJSON(needs.prepare.outputs.stylelint-versions) }}
+    steps:
+      - name: Get info from ${{ matrix.package }}
+        id: info
+        env:
+          PACKAGE: ${{ matrix.package }}
+          PACKAGES: ${{ fromJSON(needs.prepare.outputs.packages) }}
+          STYLELINT_VERSION: ${{ matrix.stylelint-version }}
+          STYLELINT_INFO: ${{ fromJSON(needs.prepare.outputs.stylelint-info) }}
+        run: |
+          url=$(npm repo --browser=false --json "${PACKAGE}" | jq -r '.url')
+          echo "URL: ${url}"
+
+          fullname=$(echo "${url}" | sed -E 's/.*github.com\/([^/]+\/[^/]+).*/\1/')
+          echo "Fullname: ${fullname}"
+
+          directory=$(npm view "${PACKAGE}" 'repository.directory')
+          echo "Directory: ${directory}"
+
+          {
+            echo "url=${url}"
+            echo "fullname=${fullname}"
+            echo "directory=${directory}"
+            jq -r --arg name "${PACKAGE}" '.[$name] | to_entries[] | "\(.key)=\(.value|tojson)"' <<< "${PACKAGES}"
+            jq -r --arg ver "${STYLELINT_VERSION}" '.[$ver] | to_entries[] | "\(.key)=\(.value|tojson)"' <<< "${STYLELINT_INFO}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout ${{ steps.info.outputs.fullname }}
+        id: checkout
+        if: ${{ steps.info.outputs.fullname }}
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          repository: ${{ steps.info.outputs.fullname }}
+
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 'lts/*'
+          # NOTE: To avoid the error "Unable to locate executable file: pnpm", it disables cache.
+          # Ref https://github.com/actions/setup-node/issues/1357
+          package-manager-cache: false
+
+      - name: Install latest npm
+        run: |
+          npm install --global npm@latest
+          echo "npm: $(npm --version)"
+
+      - name: Install pnpm
+        if: ${{ steps.info.outputs.package-manager == 'pnpm' }}
+        env:
+          STYLELINT_PACKAGE_SPEC: ${{ steps.info.outputs.stylelint-package-spec }}
+        run: |
+          npm install --global pnpm
+          echo "pnpm: $(pnpm --version)"
+
+          # Set overrides. See below:
+          # - https://pnpm.io/cli/config
+          # - https://pnpm.io/settings#dependency-resolution
+          pnpm config set --location=project --json overrides "{\"stylelint\":\"${STYLELINT_PACKAGE_SPEC}\"}"
+          pnpm config get --location=project --json overrides
+
+      - name: Install yarn
+        if: ${{ steps.info.outputs.package-manager == 'yarn' }}
+        run: |
+          npm install --global yarn
+          echo "yarn: $(yarn --version)"
+
+      - name: Install dependencies
+        id: install-deps
+        continue-on-error: true
+        working-directory: ${{ steps.info.outputs.directory }}
+        env:
+          PACKAGE_URL: ${{ steps.info.outputs.url }}
+          INSTALL_DEPS_COMMAND: ${{ steps.info.outputs.install-deps-command }}
+        run: |
+          if ! eval "${INSTALL_DEPS_COMMAND}"; then
+            echo "::error ::'${INSTALL_DEPS_COMMAND}' failed. Visit ${PACKAGE_URL}"
+            exit 1
+          fi
+
+      - name: Install Stylelint ${{ matrix.stylelint-version }}
+        id: install-stylelint
+        continue-on-error: true
+        working-directory: ${{ steps.info.outputs.directory }}
+        env:
+          STYLELINT_INSTALL: ${{ steps.info.outputs.stylelint-install }}
+          INSTALL_STYLELINT_COMMAND: ${{ steps.info.outputs.install-stylelint-command }}
+          PACKAGE_URL: ${{ steps.info.outputs.url }}
+        run: |
+          # NOTE: `--min-release-age=0` doesn't work with npm v11.13.0 for some reason.
+          npm config --location=project delete min-release-age
+
+          install_command="${INSTALL_STYLELINT_COMMAND} ${STYLELINT_INSTALL}"
+
+          if ! eval "${install_command}"; then
+            echo "::error ::'${install_command}' failed. Visit ${PACKAGE_URL}"
+            exit 1
+          fi
+
+      - name: List installed Stylelint versions
+        working-directory: ${{ steps.info.outputs.directory }}
+        env:
+          PACKAGE_URL: ${{ steps.info.outputs.url }}
+          LIST_COMMAND: ${{ steps.info.outputs.list-command }}
+        run: |
+          if ! eval "${LIST_COMMAND}"; then
+            echo "::error ::Listing dependencies failed."
+            # `npm list` has a non-zero exit code when overriding dependencies
+          fi
+
+      - name: Run build
+        id: build
+        continue-on-error: true
+        working-directory: ${{ steps.info.outputs.directory }}
+        env:
+          PACKAGE_URL: ${{ steps.info.outputs.url }}
+          BUILD_COMMAND: ${{ steps.info.outputs.build-command }}
+        run: |
+          if ! eval "${BUILD_COMMAND}"; then
+            echo "::error ::'${BUILD_COMMAND}' failed. Visit ${PACKAGE_URL}"
+            exit 1
+          fi
+
+      - name: Run test
+        id: test
+        continue-on-error: true
+        working-directory: ${{ steps.info.outputs.directory }}
+        env:
+          PACKAGE_URL: ${{ steps.info.outputs.url }}
+          TEST_COMMAND: ${{ steps.info.outputs.test-command }}
+        run: |
+          if ! eval "${TEST_COMMAND}"; then
+            echo "::error ::'${TEST_COMMAND}' failed. Visit ${PACKAGE_URL}"
+            exit 1
+          fi
+
+      - name: Determine result
+        id: result
+        if: always()
+        env:
+          OUTCOMES: >-
+            ${{ steps.info.outcome }}
+            ${{ steps.checkout.outcome }}
+            ${{ steps.install-deps.outcome }}
+            ${{ steps.install-stylelint.outcome }}
+            ${{ steps.build.outcome }}
+            ${{ steps.test.outcome }}
+        run: |
+          status=success
+          for outcome in ${OUTCOMES}; do
+            if [[ "${outcome}" == "failure" ]]; then
+              status=failure
+            fi
+          done
+          echo "Result: ${status}"
+          echo "status=${status}" >> "${GITHUB_OUTPUT}"
+
+      - name: Write result
+        id: write-result
+        if: always()
+        env:
+          PACKAGE: ${{ matrix.package }}
+          STYLELINT_VERSION: ${{ matrix.stylelint-version }}
+          STATUS: ${{ steps.result.outputs.status }}
+          FILE: ${{ steps.info.outputs.slug }}-stylelint-${{ matrix.stylelint-version }}.json
+        run: |
+          jq -n --arg package "${PACKAGE}" --arg stylelintVersion "${STYLELINT_VERSION}" --arg status "${STATUS}" \
+            '{package: $package, stylelintVersion: $stylelintVersion, status: $status}' | tee "${FILE}"
+
+          echo "file=${FILE}" >> "${GITHUB_OUTPUT}"
+
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: result-${{ steps.write-result.outputs.file }}
+          path: ${{ steps.write-result.outputs.file }}
+          if-no-files-found: error
+
+  report:
+    needs: test
+    if: ${{ always() }}
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download results
+        id: download
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          path: tmp/results
+          pattern: result-*
+          merge-multiple: true
+
+      - name: Update results and README
+        env:
+          RESULTS_DIR: ${{ steps.download.outputs.download-path }}
+        run: |
+          node scripts/collect-results.js "${RESULTS_DIR}/*.json"
+          npm run update-readme
+
+      - name: Create pull request
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if git diff --quiet -- data/test-results.yml README.md; then
+            echo "No changes in ecosystem test results."
+            exit 0
+          fi
+
+          branch="ecosystem-test-results"
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+          git switch -C "${branch}"
+          git add data/test-results.yml README.md
+          git commit -m "Update ecosystem test results"
+          git push --force origin "${branch}"
+
+          state=$(gh pr view "${branch}" --json state --jq '.state' 2>/dev/null || echo '')
+          if [[ "${state}" == "OPEN" ]]; then
+            echo "An open pull request already exists; its branch has been updated."
+          else
+            url=$(gh pr create --head "${branch}" \
+              --title "Update ecosystem test results" \
+              --body "Automated update of ecosystem test results from the [workflow run](${RUN_URL}).")
+            echo "::notice::Created pull request: ${url}"
+          fi
