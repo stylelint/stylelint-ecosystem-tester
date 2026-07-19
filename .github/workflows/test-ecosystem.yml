@@ -291,7 +291,7 @@ jobs:
           node scripts/collect-results.js "${RESULTS_DIR}/*.json"
           npm run update-readme
 
-      - name: Create pull request
+      - name: Create or update pull request
         env:
           GITHUB_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
