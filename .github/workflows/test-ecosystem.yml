@@ -177,7 +177,7 @@ jobs:
           fi
 
       - name: List installed Stylelint versions
-        if: ${{ steps.install-deps.outcome == 'success' }}
+        if: ${{ steps.install-stylelint.outcome == 'success' }}
         working-directory: ${{ steps.info.outputs.directory }}
         env:
           PACKAGE_URL: ${{ steps.info.outputs.url }}
@@ -189,7 +189,7 @@ jobs:
 
       - name: Run build
         id: build
-        if: ${{ steps.install-deps.outcome == 'success' }}
+        if: ${{ steps.install-stylelint.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ steps.info.outputs.directory }}
         env:
@@ -203,7 +203,7 @@ jobs:
 
       - name: Run test
         id: test
-        if: ${{ steps.install-deps.outcome == 'success' }}
+        if: ${{ steps.install-stylelint.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ steps.info.outputs.directory }}
         env:
