@@ -54,14 +54,16 @@ for (const [pkg, result] of Object.entries(testResults)) {
 	}
 }
 
+function testSummaryLine(version, passed, failed) {
+	return `- **Stylelint ${version}**: ${statusEmoji('success')} ${passed} passed, ${statusEmoji('failure')} ${failed} failed`;
+}
+
 packageLines.push('');
 packageLines.push(`Total ${packagesCount} packages.`);
 packageLines.push(
-	`- **Stylelint ${latestStylelintVersion}**: ${counts.latest.passed} ${statusEmoji('success')} passed, ${counts.latest.failed} ${statusEmoji('failure')} failed`,
+	testSummaryLine(latestStylelintVersion, counts.latest.passed, counts.latest.failed),
 );
-packageLines.push(
-	`- **Stylelint HEAD**: ${counts.next.passed} ${statusEmoji('success')} passed, ${counts.next.failed} ${statusEmoji('failure')} failed`,
-);
+packageLines.push(testSummaryLine('HEAD', counts.next.passed, counts.next.failed));
 
 const readmeFile = path.relative(
 	process.cwd(),
