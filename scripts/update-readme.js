@@ -21,22 +21,49 @@ function statusEmoji(status) {
 	}
 }
 
+const latestStylelintVersion = execFileSync('npm', ['view', 'stylelint', 'version'])
+	.toString()
+	.trim();
+
 const packageLines = [];
 
-packageLines.push('| Package | npm | Latest Stylelint | Next Stylelint |');
+packageLines.push(`| Package | npm | Stylelint ${latestStylelintVersion} | Stylelint HEAD |`);
 packageLines.push('| :------ | :-- | :--------------: | :------------: |');
 
 let packagesCount = 0;
+const counts = {
+	latest: { passed: 0, failed: 0 },
+	next: { passed: 0, failed: 0 },
+};
 
 for (const [pkg, result] of Object.entries(testResults)) {
 	packageLines.push(
 		`| \`${pkg}\` | ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
 	);
 	packagesCount += 1;
+
+	for (const key of ['latest', 'next']) {
+		switch (result[key]?.status) {
+			case 'success':
+				counts[key].passed += 1;
+				break;
+			case 'failure':
+				counts[key].failed += 1;
+				break;
+		}
+	}
+}
+
+function testSummaryLine(version, passed, failed) {
+	return `- **Stylelint ${version}**: ${statusEmoji('success')} ${passed} passed, ${statusEmoji('failure')} ${failed} failed`;
 }
 
 packageLines.push('');
-packageLines.push(`Total ${packagesCount} packages`);
+packageLines.push(`Total ${packagesCount} packages.`);
+packageLines.push(
+	testSummaryLine(latestStylelintVersion, counts.latest.passed, counts.latest.failed),
+);
+packageLines.push(testSummaryLine('HEAD', counts.next.passed, counts.next.failed));
 
 const readmeFile = path.relative(
 	process.cwd(),
@@ -52,10 +79,7 @@ writeFileSync(readmeFile, readmeLines.join('\n'), 'utf8');
 
 execFileSync('npx', ['prettier', '--write', readmeFile]);
 
-const diff = execFileSync(
-	'git',
-	['diff', '--color', process.env.CI ? '--exit-code' : undefined, readmeFile].filter(Boolean),
-).toString();
+const diff = execFileSync('git', ['diff', '--color', readmeFile].filter(Boolean)).toString();
 
 if (diff.trim().length === 0) {
 	process.stdout.write(`${readmeFile} is not updated.\n`);

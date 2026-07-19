@@ -35,7 +35,7 @@ const DEFAULT_PACKAGE_INFO = {
 	'install-deps-command': 'npm install --ignore-scripts --no-audit',
 	'install-stylelint-command': 'npm install --ignore-scripts --no-audit --no-save --allow-git=all',
 	'list-command': 'npm list stylelint',
-	'build-command': 'npm run build --if-present',
+	'build-command': 'npm run --if-present build',
 	'test-command': 'npm test',
 };
 
@@ -44,6 +44,7 @@ const ADVANCED_PACKAGE_INFO = {
 		'install-deps-command': 'pnpm install --ignore-scripts --no-frozen-lockfile',
 		'install-stylelint-command': 'pnpm add --ignore-scripts',
 		'list-command': 'pnpm list stylelint',
+		'build-command': 'pnpm run --if-present build',
 		'test-command': 'pnpm test',
 	},
 	yarn: {
