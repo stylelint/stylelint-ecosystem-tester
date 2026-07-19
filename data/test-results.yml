@@ -1,43 +1,215 @@
-'@primer/stylelint-config': {}
-'@shopify/stylelint-plugin': {}
-'@stylistic/stylelint-config': {}
-'@stylistic/stylelint-plugin': {}
-jest-preset-stylelint: {}
-stylelint-actions-formatters: {}
-stylelint-checkstyle-reporter: {}
-stylelint-config-clean-order: {}
-stylelint-config-css-modules: {}
-stylelint-config-html: {}
-stylelint-config-idiomatic-order: {}
-stylelint-config-property-sort-order-smacss: {}
-stylelint-config-recess-order: {}
-stylelint-config-recommended: {}
-stylelint-config-recommended-scss: {}
-stylelint-config-recommended-vue: {}
-stylelint-config-sass-guidelines: {}
-stylelint-config-standard: {}
-stylelint-config-standard-scss: {}
-stylelint-config-suitcss: {}
-stylelint-config-twbs-bootstrap: {}
-stylelint-config-wikimedia: {}
-stylelint-config-xo: {}
-stylelint-config-xo-scss: {}
-stylelint-declaration-block-no-ignored-properties: {}
-stylelint-declaration-strict-value: {}
-stylelint-formatter-pretty: {}
-stylelint-high-performance-animation: {}
-stylelint-less: {}
-stylelint-media-use-custom-media: {}
-stylelint-no-unsupported-browser-features: {}
-stylelint-order: {}
-stylelint-plugin-defensive-css: {}
-stylelint-plugin-logical-css: {}
-stylelint-prettier: {}
-stylelint-react-native: {}
-stylelint-scss: {}
-stylelint-selector-bem-pattern: {}
-stylelint-test-rule-node: {}
-stylelint-use-logical: {}
-stylelint-use-logical-spec: {}
-stylelint-use-nesting: {}
-stylelint-value-no-unknown-custom-properties: {}
+'@primer/stylelint-config':
+  latest:
+    status: failure
+  next:
+    status: failure
+'@shopify/stylelint-plugin':
+  latest:
+    status: failure
+  next:
+    status: failure
+'@stylistic/stylelint-config':
+  latest:
+    status: success
+  next:
+    status: success
+'@stylistic/stylelint-plugin':
+  latest:
+    status: success
+  next:
+    status: success
+jest-preset-stylelint:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-actions-formatters:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-checkstyle-reporter:
+  latest:
+    status: failure
+  next:
+    status: failure
+stylelint-config-clean-order:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-css-modules:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-html:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-idiomatic-order:
+  latest:
+    status: failure
+  next:
+    status: failure
+stylelint-config-property-sort-order-smacss:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-recess-order:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-recommended:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-recommended-scss:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-recommended-vue:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-sass-guidelines:
+  latest:
+    status: failure
+  next:
+    status: failure
+stylelint-config-standard:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-standard-scss:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-suitcss:
+  latest:
+    status: failure
+  next:
+    status: failure
+stylelint-config-twbs-bootstrap:
+  latest:
+    status: failure
+  next:
+    status: failure
+stylelint-config-wikimedia:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-xo:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-xo-scss:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-declaration-block-no-ignored-properties:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-declaration-strict-value:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-formatter-pretty:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-high-performance-animation:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-less:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-media-use-custom-media:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-no-unsupported-browser-features:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-order:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-plugin-defensive-css:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-plugin-logical-css:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-prettier:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-react-native:
+  latest:
+    status: failure
+  next:
+    status: failure
+stylelint-scss:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-selector-bem-pattern:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-test-rule-node:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-use-logical:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-use-logical-spec:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-use-nesting:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-value-no-unknown-custom-properties:
+  latest:
+    status: success
+  next:
+    status: success
