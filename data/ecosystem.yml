@@ -9,6 +9,7 @@ packages:
     test-command: 'make test'
   '@stylistic/stylelint-plugin':
     package-manager: 'pnpm'
+    test-command: 'make test'
   # '@wordpress/stylelint-config': {}
   'jest-preset-stylelint': {}
   'stylelint-actions-formatters': {}
