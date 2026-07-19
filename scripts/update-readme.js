@@ -23,14 +23,14 @@ function statusEmoji(status) {
 
 const packageLines = [];
 
-packageLines.push('| Package | Latest Stylelint | Next Stylelint |');
-packageLines.push('| :------ | :--------------: | :------------: |');
+packageLines.push('| Package | npm | Latest Stylelint | Next Stylelint |');
+packageLines.push('| :------ | :-- | :--------------: | :------------: |');
 
 let packagesCount = 0;
 
 for (const [pkg, result] of Object.entries(testResults)) {
 	packageLines.push(
-		`| ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
+		`| \`${pkg}\` | ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
 	);
 	packagesCount += 1;
 }
