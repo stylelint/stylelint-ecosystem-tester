@@ -14,7 +14,8 @@ packages:
   'jest-preset-stylelint': {}
   'stylelint-actions-formatters': {}
   'stylelint-checkstyle-reporter': {}
-  'stylelint-config-clean-order': {}
+  'stylelint-config-clean-order':
+    package-manager: 'pnpm'
   'stylelint-config-css-modules': {}
   'stylelint-config-html': {}
   'stylelint-config-idiomatic-order': {}
