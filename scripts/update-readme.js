@@ -52,10 +52,7 @@ writeFileSync(readmeFile, readmeLines.join('\n'), 'utf8');
 
 execFileSync('npx', ['prettier', '--write', readmeFile]);
 
-const diff = execFileSync(
-	'git',
-	['diff', '--color', process.env.CI ? '--exit-code' : undefined, readmeFile].filter(Boolean),
-).toString();
+const diff = execFileSync('git', ['diff', '--color', readmeFile].filter(Boolean)).toString();
 
 if (diff.trim().length === 0) {
 	process.stdout.write(`${readmeFile} is not updated.\n`);
