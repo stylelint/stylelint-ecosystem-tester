@@ -79,9 +79,9 @@ jobs:
         id: info
         env:
           PACKAGE: ${{ matrix.package }}
-          PACKAGES: ${{ fromJSON(needs.prepare.outputs.packages) }}
+          PACKAGES: ${{ needs.prepare.outputs.packages }}
           STYLELINT_VERSION: ${{ matrix.stylelint-version }}
-          STYLELINT_INFO: ${{ fromJSON(needs.prepare.outputs.stylelint-info) }}
+          STYLELINT_INFO: ${{ needs.prepare.outputs.stylelint-info }}
         run: |
           url=$(npm repo --browser=false --json "${PACKAGE}" | jq -r '.url')
           echo "URL: ${url}"
