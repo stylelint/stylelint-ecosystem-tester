@@ -291,6 +291,14 @@ jobs:
           node scripts/collect-results.js "${RESULTS_DIR}/*.json"
           npm run update-readme
 
+      - name: Add job summary
+        run: |
+          {
+            echo "## Ecosystem Test Results"
+            echo
+            awk '/<!-- START:PACKAGES -->/{f=1;next} /<!-- END:PACKAGES -->/{f=0} f' README.md
+          } >> "${GITHUB_STEP_SUMMARY}"
+
       - name: Create or update pull request
         env:
           GITHUB_TOKEN: ${{ github.token }}
