@@ -67,7 +67,7 @@ Total 43 packages
 <!-- END:PACKAGES -->
 
 > [!TIP]
-> To update the packages list, run the `npm run update-readme -- --results=data/results.yml` command.
+> To update the packages list, run the `npm run update-readme` command.
 
 ## Criteria
 
