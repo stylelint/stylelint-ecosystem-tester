@@ -203,7 +203,7 @@ jobs:
 
       - name: Run test
         id: test
-        if: ${{ steps.install-stylelint.outcome == 'success' }}
+        if: ${{ steps.build.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ steps.info.outputs.directory }}
         env:
