@@ -66,9 +66,6 @@ Total 43 packages
 
 <!-- END:PACKAGES -->
 
-> [!TIP]
-> To update the packages list, run the `npm run update-readme` command.
-
 ## Criteria
 
 An eligible package should meet the following criteria:
