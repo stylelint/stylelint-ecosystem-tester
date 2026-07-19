@@ -31,16 +31,35 @@ packageLines.push(`| Package | npm | Stylelint ${latestStylelintVersion} | Style
 packageLines.push('| :------ | :-- | :--------------: | :------------: |');
 
 let packagesCount = 0;
+const counts = {
+	latest: { passed: 0, failed: 0 },
+	next: { passed: 0, failed: 0 },
+};
 
 for (const [pkg, result] of Object.entries(testResults)) {
 	packageLines.push(
 		`| \`${pkg}\` | ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
 	);
 	packagesCount += 1;
+
+	for (const key of ['latest', 'next']) {
+		switch (result[key]?.status) {
+			case 'success':
+				counts[key].passed += 1;
+				break;
+			case 'failure':
+				counts[key].failed += 1;
+				break;
+		}
+	}
 }
 
 packageLines.push('');
 packageLines.push(`Total ${packagesCount} packages`);
+packageLines.push(
+	`- Stylelint ${latestStylelintVersion}: passed ${counts.latest.passed}, failed ${counts.latest.failed}`,
+);
+packageLines.push(`- Stylelint HEAD: passed ${counts.next.passed}, failed ${counts.next.failed}`);
 
 const readmeFile = path.relative(
 	process.cwd(),
