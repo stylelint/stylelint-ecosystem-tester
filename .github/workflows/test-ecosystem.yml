@@ -321,7 +321,7 @@ jobs:
           if [[ "${state}" == "OPEN" ]]; then
             echo "An open pull request already exists; its branch has been updated."
           else
-            url=$(gh pr create --head "${branch}" \
+            url=$(gh pr create --head "${branch}" --base "${GITHUB_REF_NAME}" \
               --title "Update ecosystem test results" \
               --body "Automated update of ecosystem test results from the [workflow run](${RUN_URL}).")
             echo "::notice::Created pull request: ${url}"
