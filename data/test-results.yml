@@ -218,3 +218,8 @@ stylelint-value-no-unknown-custom-properties:
     status: success
   next:
     status: success
+stylelint-webpack-plugin:
+  latest:
+    status: success
+  next:
+    status: success
