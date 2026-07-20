@@ -34,7 +34,7 @@ packages:
   stylelint-config-recommended-vue: {}
   stylelint-config-sass-guidelines: {}
   stylelint-config-standard-scss: {}
-  # stylelint-config-standard-vue: {}
+  stylelint-config-standard-vue: {}
   stylelint-config-suitcss: {}
   stylelint-config-twbs-bootstrap: {}
   stylelint-config-wikimedia: {}
@@ -60,7 +60,7 @@ packages:
   stylelint-scss: {}
   stylelint-selector-bem-pattern: {}
   # stylelint-stylus: {}
-  # stylelint-suitcss: {}
+  stylelint-suitcss: {}
   stylelint-test-rule-node: {}
   stylelint-use-logical: {}
   stylelint-use-logical-spec: {}
