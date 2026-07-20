@@ -1,4 +1,10 @@
 packages:
+  # Official
+  stylelint-config-recommended:
+    official: true
+  stylelint-config-standard:
+    official: true
+
   # In alphabetical order
   '@primer/stylelint-config': {}
   '@shopify/stylelint-plugin':
@@ -24,11 +30,9 @@ packages:
   stylelint-config-idiomatic-order: {}
   stylelint-config-property-sort-order-smacss: {}
   stylelint-config-recess-order: {}
-  stylelint-config-recommended: {}
   stylelint-config-recommended-scss: {}
   stylelint-config-recommended-vue: {}
   stylelint-config-sass-guidelines: {}
-  stylelint-config-standard: {}
   stylelint-config-standard-scss: {}
   # stylelint-config-standard-vue: {}
   stylelint-config-suitcss: {}

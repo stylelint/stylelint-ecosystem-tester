@@ -4,10 +4,15 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import process from 'node:process';
 
+import ecosystemData from './utils/ecosystemData.js';
 import testResults from './utils/testResults.js';
 
 function npmBadge(pkg) {
 	return `[![${pkg}](https://img.shields.io/npm/v/${pkg}.svg)](https://www.npmjs.com/package/${pkg})`;
+}
+
+function isOfficial(pkg) {
+	return ecosystemData.packages[pkg]?.official === true;
 }
 
 function statusEmoji(status) {
@@ -36,9 +41,13 @@ const counts = {
 	next: { passed: 0, failed: 0 },
 };
 
-for (const [pkg, result] of Object.entries(testResults)) {
+const sortedEntries = Object.entries(testResults).sort(([a], [b]) => isOfficial(b) - isOfficial(a));
+
+for (const [pkg, result] of sortedEntries) {
+	const pkgLabel = isOfficial(pkg) ? `\`${pkg}\` ⭐` : `\`${pkg}\``;
+
 	packageLines.push(
-		`| \`${pkg}\` | ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
+		`| ${pkgLabel} | ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
 	);
 	packagesCount += 1;
 
