@@ -66,3 +66,4 @@ packages:
   stylelint-use-logical-spec: {}
   stylelint-use-nesting: {}
   stylelint-value-no-unknown-custom-properties: {}
+  stylelint-webpack-plugin: {}
