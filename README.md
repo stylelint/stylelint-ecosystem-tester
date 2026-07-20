@@ -67,10 +67,10 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-use-nesting`                             | [![stylelint-use-nesting](https://img.shields.io/npm/v/stylelint-use-nesting.svg)](https://www.npmjs.com/package/stylelint-use-nesting)                                                                                     |        ✅         |       ✅       |
 | `stylelint-value-no-unknown-custom-properties`      | [![stylelint-value-no-unknown-custom-properties](https://img.shields.io/npm/v/stylelint-value-no-unknown-custom-properties.svg)](https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties)                |        ✅         |       ✅       |
 
-Total 45 packages.
+Total 46 packages.
 
-- **Stylelint 17.14.1**: ✅ 35 passed, ❌ 10 failed
-- **Stylelint HEAD**: ✅ 35 passed, ❌ 10 failed
+- **Stylelint 17.14.1**: ✅ 35 passed, ❌ 11 failed
+- **Stylelint HEAD**: ✅ 35 passed, ❌ 11 failed
 <!-- END:PACKAGES -->
 
 > [!NOTE]
