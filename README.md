@@ -17,7 +17,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 
 <!-- START:PACKAGES -->
 
-| Package                                             | npm                                                                                                                                                                                                                         | Stylelint 17.14.0 | Stylelint HEAD |
+| Package                                             | npm                                                                                                                                                                                                                         | Stylelint 17.14.1 | Stylelint HEAD |
 | :-------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------: | :------------: |
 | `@primer/stylelint-config`                          | [![@primer/stylelint-config](https://img.shields.io/npm/v/@primer/stylelint-config.svg)](https://www.npmjs.com/package/@primer/stylelint-config)                                                                            |        ❌         |       ❌       |
 | `@shopify/stylelint-plugin`                         | [![@shopify/stylelint-plugin](https://img.shields.io/npm/v/@shopify/stylelint-plugin.svg)](https://www.npmjs.com/package/@shopify/stylelint-plugin)                                                                         |        ❌         |       ❌       |
@@ -65,7 +65,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 
 Total 43 packages.
 
-- **Stylelint 17.14.0**: ✅ 35 passed, ❌ 8 failed
+- **Stylelint 17.14.1**: ✅ 35 passed, ❌ 8 failed
 - **Stylelint HEAD**: ✅ 35 passed, ❌ 8 failed
 <!-- END:PACKAGES -->
 
