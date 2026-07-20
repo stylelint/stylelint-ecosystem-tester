@@ -64,11 +64,12 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-use-logical-spec`                        | [![stylelint-use-logical-spec](https://img.shields.io/npm/v/stylelint-use-logical-spec.svg)](https://www.npmjs.com/package/stylelint-use-logical-spec)                                                                      |        ✅         |       ✅       |
 | `stylelint-use-nesting`                             | [![stylelint-use-nesting](https://img.shields.io/npm/v/stylelint-use-nesting.svg)](https://www.npmjs.com/package/stylelint-use-nesting)                                                                                     |        ✅         |       ✅       |
 | `stylelint-value-no-unknown-custom-properties`      | [![stylelint-value-no-unknown-custom-properties](https://img.shields.io/npm/v/stylelint-value-no-unknown-custom-properties.svg)](https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties)                |        ✅         |       ✅       |
+| `stylelint-webpack-plugin`                          | [![stylelint-webpack-plugin](https://img.shields.io/npm/v/stylelint-webpack-plugin.svg)](https://www.npmjs.com/package/stylelint-webpack-plugin)                                                                            |        ✅         |       ✅       |
 
-Total 44 packages.
+Total 45 packages.
 
-- **Stylelint 17.14.1**: ✅ 35 passed, ❌ 9 failed
-- **Stylelint HEAD**: ✅ 35 passed, ❌ 9 failed
+- **Stylelint 17.14.1**: ✅ 36 passed, ❌ 9 failed
+- **Stylelint HEAD**: ✅ 36 passed, ❌ 9 failed
 <!-- END:PACKAGES -->
 
 > [!NOTE]
