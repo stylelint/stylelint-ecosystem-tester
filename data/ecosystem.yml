@@ -16,7 +16,10 @@ packages:
   '@stylistic/stylelint-plugin':
     package-manager: 'pnpm'
     test-command: 'make test'
-  # '@wordpress/stylelint-config': {}
+  '@wordpress/stylelint-config':
+    # The package has no `npm test` script in its monorepo.
+    # See: https://github.com/WordPress/gutenberg/tree/3a1fb6f3620d7b96180ad1761682e2e69c5a5332/packages/stylelint-config
+    test-command: 'npx jest --rootDir . --testMatch "**/test/**/*.js" --testPathIgnorePatterns "/node_modules/" "/test/utils/"'
   jest-preset-stylelint: {}
   stylelint-actions-formatters: {}
   stylelint-checkstyle-reporter: {}
