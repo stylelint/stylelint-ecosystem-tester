@@ -1,3 +1,13 @@
+stylelint-config-recommended:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-config-standard:
+  latest:
+    status: success
+  next:
+    status: success
 '@primer/stylelint-config':
   latest:
     status: failure
@@ -68,11 +78,6 @@ stylelint-config-recess-order:
     status: success
   next:
     status: success
-stylelint-config-recommended:
-  latest:
-    status: success
-  next:
-    status: success
 stylelint-config-recommended-scss:
   latest:
     status: success
@@ -88,11 +93,6 @@ stylelint-config-sass-guidelines:
     status: failure
   next:
     status: failure
-stylelint-config-standard:
-  latest:
-    status: success
-  next:
-    status: success
 stylelint-config-standard-scss:
   latest:
     status: success
