@@ -162,15 +162,8 @@ jobs:
           STYLELINT_INSTALL: ${{ steps.info.outputs.stylelint-install }}
           INSTALL_STYLELINT_COMMAND: ${{ steps.info.outputs.install-stylelint-command }}
           PACKAGE_URL: ${{ steps.info.outputs.url }}
-          PACKAGE_MANAGER: ${{ steps.info.outputs.package-manager }}
         run: |
-          # NOTE: `--min-release-age=0` doesn't work with npm v11.13.0 for some reason.
-          if [[ -z "${PACKAGE_MANAGER}" ]]; then
-            npm config --location=project delete min-release-age
-          fi
-
           install_command="${INSTALL_STYLELINT_COMMAND} ${STYLELINT_INSTALL}"
-
           if ! eval "${install_command}"; then
             echo "::error ::'${install_command}' failed. Visit ${PACKAGE_URL}"
             exit 1
