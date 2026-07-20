@@ -10,7 +10,7 @@ packages:
   '@stylistic/stylelint-plugin':
     package-manager: 'pnpm'
     test-command: 'make test'
-  # '@wordpress/stylelint-config': {}
+  '@wordpress/stylelint-config': {}
   jest-preset-stylelint: {}
   stylelint-actions-formatters: {}
   stylelint-checkstyle-reporter: {}
