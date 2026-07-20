@@ -40,6 +40,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-config-recommended-vue`                  | [![stylelint-config-recommended-vue](https://img.shields.io/npm/v/stylelint-config-recommended-vue.svg)](https://www.npmjs.com/package/stylelint-config-recommended-vue)                                                    |        ✅         |       ✅       |
 | `stylelint-config-sass-guidelines`                  | [![stylelint-config-sass-guidelines](https://img.shields.io/npm/v/stylelint-config-sass-guidelines.svg)](https://www.npmjs.com/package/stylelint-config-sass-guidelines)                                                    |        ❌         |       ❌       |
 | `stylelint-config-standard-scss`                    | [![stylelint-config-standard-scss](https://img.shields.io/npm/v/stylelint-config-standard-scss.svg)](https://www.npmjs.com/package/stylelint-config-standard-scss)                                                          |        ✅         |       ✅       |
+| `stylelint-config-standard-vue`                     | [![stylelint-config-standard-vue](https://img.shields.io/npm/v/stylelint-config-standard-vue.svg)](https://www.npmjs.com/package/stylelint-config-standard-vue)                                                             |        ❌         |       ❌       |
 | `stylelint-config-suitcss`                          | [![stylelint-config-suitcss](https://img.shields.io/npm/v/stylelint-config-suitcss.svg)](https://www.npmjs.com/package/stylelint-config-suitcss)                                                                            |        ❌         |       ❌       |
 | `stylelint-config-twbs-bootstrap`                   | [![stylelint-config-twbs-bootstrap](https://img.shields.io/npm/v/stylelint-config-twbs-bootstrap.svg)](https://www.npmjs.com/package/stylelint-config-twbs-bootstrap)                                                       |        ❌         |       ❌       |
 | `stylelint-config-wikimedia`                        | [![stylelint-config-wikimedia](https://img.shields.io/npm/v/stylelint-config-wikimedia.svg)](https://www.npmjs.com/package/stylelint-config-wikimedia)                                                                      |        ✅         |       ✅       |
@@ -65,10 +66,10 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-use-nesting`                             | [![stylelint-use-nesting](https://img.shields.io/npm/v/stylelint-use-nesting.svg)](https://www.npmjs.com/package/stylelint-use-nesting)                                                                                     |        ✅         |       ✅       |
 | `stylelint-value-no-unknown-custom-properties`      | [![stylelint-value-no-unknown-custom-properties](https://img.shields.io/npm/v/stylelint-value-no-unknown-custom-properties.svg)](https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties)                |        ✅         |       ✅       |
 
-Total 44 packages.
+Total 45 packages.
 
-- **Stylelint 17.14.1**: ✅ 35 passed, ❌ 9 failed
-- **Stylelint HEAD**: ✅ 35 passed, ❌ 9 failed
+- **Stylelint 17.14.1**: ✅ 35 passed, ❌ 10 failed
+- **Stylelint HEAD**: ✅ 35 passed, ❌ 10 failed
 <!-- END:PACKAGES -->
 
 > [!NOTE]
