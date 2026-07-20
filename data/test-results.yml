@@ -18,6 +18,11 @@
     status: success
   next:
     status: success
+'@wordpress/stylelint-config':
+  latest:
+    status: failure
+  next:
+    status: failure
 jest-preset-stylelint:
   latest:
     status: success
