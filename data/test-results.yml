@@ -193,6 +193,11 @@ stylelint-selector-bem-pattern:
     status: success
   next:
     status: success
+stylelint-suitcss:
+  latest:
+    status: failure
+  next:
+    status: failure
 stylelint-test-rule-node:
   latest:
     status: success
