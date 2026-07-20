@@ -98,6 +98,11 @@ stylelint-config-standard-scss:
     status: success
   next:
     status: success
+stylelint-config-standard-vue:
+  latest:
+    status: failure
+  next:
+    status: failure
 stylelint-config-suitcss:
   latest:
     status: failure
