@@ -34,7 +34,7 @@ packages:
   stylelint-config-recommended-vue: {}
   stylelint-config-sass-guidelines: {}
   stylelint-config-standard-scss: {}
-  # stylelint-config-standard-vue: {}
+  stylelint-config-standard-vue: {}
   stylelint-config-suitcss: {}
   stylelint-config-twbs-bootstrap: {}
   stylelint-config-wikimedia: {}
