@@ -40,7 +40,7 @@ packages:
   stylelint-config-wikimedia: {}
   stylelint-config-xo: {}
   stylelint-config-xo-scss: {}
-  # stylelint-csstree-validator: {}
+  stylelint-csstree-validator: {}
   stylelint-declaration-block-no-ignored-properties: {}
   stylelint-declaration-strict-value: {}
   stylelint-formatter-pretty: {}
