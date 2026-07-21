@@ -128,6 +128,11 @@ stylelint-config-xo-scss:
     status: success
   next:
     status: success
+stylelint-csstree-validator:
+  latest:
+    status: success
+  next:
+    status: success
 stylelint-declaration-block-no-ignored-properties:
   latest:
     status: success
