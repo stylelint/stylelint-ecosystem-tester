@@ -6,6 +6,7 @@ packages:
     official: true
 
   # In alphabetical order
+  '@double-great/stylelint-a11y': {}
   '@primer/stylelint-config': {}
   '@shopify/stylelint-plugin':
     package-manager: 'yarn'
