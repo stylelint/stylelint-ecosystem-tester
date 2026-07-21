@@ -61,6 +61,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-react-native`                            | [![stylelint-react-native](https://img.shields.io/npm/v/stylelint-react-native.svg)](https://www.npmjs.com/package/stylelint-react-native)                                                                                  |        ❌         |       ❌       |
 | `stylelint-scss`                                    | [![stylelint-scss](https://img.shields.io/npm/v/stylelint-scss.svg)](https://www.npmjs.com/package/stylelint-scss)                                                                                                          |        ✅         |       ✅       |
 | `stylelint-selector-bem-pattern`                    | [![stylelint-selector-bem-pattern](https://img.shields.io/npm/v/stylelint-selector-bem-pattern.svg)](https://www.npmjs.com/package/stylelint-selector-bem-pattern)                                                          |        ✅         |       ✅       |
+| `stylelint-stylus`                                  | [![stylelint-stylus](https://img.shields.io/npm/v/stylelint-stylus.svg)](https://www.npmjs.com/package/stylelint-stylus)                                                                                                    |        ❌         |       ❌       |
 | `stylelint-suitcss`                                 | [![stylelint-suitcss](https://img.shields.io/npm/v/stylelint-suitcss.svg)](https://www.npmjs.com/package/stylelint-suitcss)                                                                                                 |        ❌         |       ❌       |
 | `stylelint-test-rule-node`                          | [![stylelint-test-rule-node](https://img.shields.io/npm/v/stylelint-test-rule-node.svg)](https://www.npmjs.com/package/stylelint-test-rule-node)                                                                            |        ✅         |       ✅       |
 | `stylelint-use-logical`                             | [![stylelint-use-logical](https://img.shields.io/npm/v/stylelint-use-logical.svg)](https://www.npmjs.com/package/stylelint-use-logical)                                                                                     |        ✅         |       ✅       |
@@ -69,10 +70,10 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-value-no-unknown-custom-properties`      | [![stylelint-value-no-unknown-custom-properties](https://img.shields.io/npm/v/stylelint-value-no-unknown-custom-properties.svg)](https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties)                |        ✅         |       ✅       |
 | `stylelint-webpack-plugin`                          | [![stylelint-webpack-plugin](https://img.shields.io/npm/v/stylelint-webpack-plugin.svg)](https://www.npmjs.com/package/stylelint-webpack-plugin)                                                                            |        ✅         |       ✅       |
 
-Total 48 packages.
+Total 49 packages.
 
-- **Stylelint 17.14.1**: ✅ 37 passed, ❌ 11 failed
-- **Stylelint HEAD**: ✅ 37 passed, ❌ 11 failed
+- **Stylelint 17.14.1**: ✅ 37 passed, ❌ 12 failed
+- **Stylelint HEAD**: ✅ 37 passed, ❌ 12 failed
 <!-- END:PACKAGES -->
 
 > [!NOTE]

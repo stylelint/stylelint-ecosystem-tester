@@ -203,6 +203,11 @@ stylelint-selector-bem-pattern:
     status: success
   next:
     status: success
+stylelint-stylus:
+  latest:
+    status: failure
+  next:
+    status: failure
 stylelint-suitcss:
   latest:
     status: failure
