@@ -10,9 +10,9 @@ stylelint-config-standard:
     status: success
 '@double-great/stylelint-a11y':
   latest:
-    status: failure
+    status: success
   next:
-    status: failure
+    status: success
 '@primer/stylelint-config':
   latest:
     status: failure
