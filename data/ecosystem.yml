@@ -6,7 +6,9 @@ packages:
     official: true
 
   # In alphabetical order
-  '@double-great/stylelint-a11y': {}
+  '@double-great/stylelint-a11y':
+    # TODO: The test fails with npm v12 because log message prefixes (e.g., "npm info using ...") breaks down JSON outputs.
+    test-command: 'npm_config_loglevel=error npm test'
   '@primer/stylelint-config': {}
   '@shopify/stylelint-plugin':
     package-manager: 'yarn'
