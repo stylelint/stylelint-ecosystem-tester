@@ -46,6 +46,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-config-wikimedia`                        | [![stylelint-config-wikimedia](https://img.shields.io/npm/v/stylelint-config-wikimedia.svg)](https://www.npmjs.com/package/stylelint-config-wikimedia)                                                                      |        ✅         |       ✅       |
 | `stylelint-config-xo`                               | [![stylelint-config-xo](https://img.shields.io/npm/v/stylelint-config-xo.svg)](https://www.npmjs.com/package/stylelint-config-xo)                                                                                           |        ✅         |       ✅       |
 | `stylelint-config-xo-scss`                          | [![stylelint-config-xo-scss](https://img.shields.io/npm/v/stylelint-config-xo-scss.svg)](https://www.npmjs.com/package/stylelint-config-xo-scss)                                                                            |        ✅         |       ✅       |
+| `stylelint-csstree-validator`                       | [![stylelint-csstree-validator](https://img.shields.io/npm/v/stylelint-csstree-validator.svg)](https://www.npmjs.com/package/stylelint-csstree-validator)                                                                   |        ✅         |       ✅       |
 | `stylelint-declaration-block-no-ignored-properties` | [![stylelint-declaration-block-no-ignored-properties](https://img.shields.io/npm/v/stylelint-declaration-block-no-ignored-properties.svg)](https://www.npmjs.com/package/stylelint-declaration-block-no-ignored-properties) |        ✅         |       ✅       |
 | `stylelint-declaration-strict-value`                | [![stylelint-declaration-strict-value](https://img.shields.io/npm/v/stylelint-declaration-strict-value.svg)](https://www.npmjs.com/package/stylelint-declaration-strict-value)                                              |        ✅         |       ✅       |
 | `stylelint-formatter-pretty`                        | [![stylelint-formatter-pretty](https://img.shields.io/npm/v/stylelint-formatter-pretty.svg)](https://www.npmjs.com/package/stylelint-formatter-pretty)                                                                      |        ✅         |       ✅       |
@@ -68,10 +69,10 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-value-no-unknown-custom-properties`      | [![stylelint-value-no-unknown-custom-properties](https://img.shields.io/npm/v/stylelint-value-no-unknown-custom-properties.svg)](https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties)                |        ✅         |       ✅       |
 | `stylelint-webpack-plugin`                          | [![stylelint-webpack-plugin](https://img.shields.io/npm/v/stylelint-webpack-plugin.svg)](https://www.npmjs.com/package/stylelint-webpack-plugin)                                                                            |        ✅         |       ✅       |
 
-Total 47 packages.
+Total 48 packages.
 
-- **Stylelint 17.14.1**: ✅ 36 passed, ❌ 11 failed
-- **Stylelint HEAD**: ✅ 36 passed, ❌ 11 failed
+- **Stylelint 17.14.1**: ✅ 37 passed, ❌ 11 failed
+- **Stylelint HEAD**: ✅ 37 passed, ❌ 11 failed
 <!-- END:PACKAGES -->
 
 > [!NOTE]
