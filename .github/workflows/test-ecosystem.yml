@@ -120,8 +120,15 @@ jobs:
           npm install --global npm@latest
           echo "npm: $(npm --version)"
 
+      - name: Install Corepack
+        if: ${{ steps.info.outputs.corepack }}
+        run: |
+          npm install --global corepack
+          echo "corepack: $(corepack --version)"
+          corepack enable
+
       - name: Install pnpm
-        if: ${{ steps.info.outputs.package-manager == 'pnpm' }}
+        if: ${{ steps.info.outputs.package-manager == 'pnpm' && !steps.info.outputs.corepack }}
         env:
           STYLELINT_PACKAGE_SPEC: ${{ steps.info.outputs.stylelint-package-spec }}
         run: |
@@ -135,7 +142,7 @@ jobs:
           pnpm config get --location=project --json overrides
 
       - name: Install yarn
-        if: ${{ steps.info.outputs.package-manager == 'yarn' }}
+        if: ${{ steps.info.outputs.package-manager == 'yarn' && !steps.info.outputs.corepack }}
         run: |
           npm install --global yarn
           echo "yarn: $(yarn --version)"
