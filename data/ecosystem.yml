@@ -1,3 +1,9 @@
+# Attributes:
+# - official (boolean): Whether it's an official Stylelint package.
+# - package-manager (enum): npm, pnpm, or, yarn.
+# - corepack (boolean): Whether to use Corepack.
+# - test-command (string): Command to run tests.
+
 packages:
   # Official
   stylelint-config-recommended:
