@@ -29,6 +29,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `@stylistic/stylelint-plugin`                       | [![@stylistic/stylelint-plugin](https://img.shields.io/npm/v/@stylistic/stylelint-plugin.svg)](https://www.npmjs.com/package/@stylistic/stylelint-plugin)                                                                   |        ✅         |       ✅       |
 | `@wordpress/stylelint-config`                       | [![@wordpress/stylelint-config](https://img.shields.io/npm/v/@wordpress/stylelint-config.svg)](https://www.npmjs.com/package/@wordpress/stylelint-config)                                                                   |        ❌         |       ❌       |
 | `jest-preset-stylelint`                             | [![jest-preset-stylelint](https://img.shields.io/npm/v/jest-preset-stylelint.svg)](https://www.npmjs.com/package/jest-preset-stylelint)                                                                                     |        ✅         |       ✅       |
+| `nx-stylelint`                                      | [![nx-stylelint](https://img.shields.io/npm/v/nx-stylelint.svg)](https://www.npmjs.com/package/nx-stylelint)                                                                                                                |        ✅         |       ✅       |
 | `stylelint-actions-formatters`                      | [![stylelint-actions-formatters](https://img.shields.io/npm/v/stylelint-actions-formatters.svg)](https://www.npmjs.com/package/stylelint-actions-formatters)                                                                |        ✅         |       ✅       |
 | `stylelint-checkstyle-reporter`                     | [![stylelint-checkstyle-reporter](https://img.shields.io/npm/v/stylelint-checkstyle-reporter.svg)](https://www.npmjs.com/package/stylelint-checkstyle-reporter)                                                             |        ❌         |       ❌       |
 | `stylelint-config-clean-order`                      | [![stylelint-config-clean-order](https://img.shields.io/npm/v/stylelint-config-clean-order.svg)](https://www.npmjs.com/package/stylelint-config-clean-order)                                                                |        ✅         |       ✅       |
@@ -69,11 +70,12 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-use-nesting`                             | [![stylelint-use-nesting](https://img.shields.io/npm/v/stylelint-use-nesting.svg)](https://www.npmjs.com/package/stylelint-use-nesting)                                                                                     |        ✅         |       ✅       |
 | `stylelint-value-no-unknown-custom-properties`      | [![stylelint-value-no-unknown-custom-properties](https://img.shields.io/npm/v/stylelint-value-no-unknown-custom-properties.svg)](https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties)                |        ✅         |       ✅       |
 | `stylelint-webpack-plugin`                          | [![stylelint-webpack-plugin](https://img.shields.io/npm/v/stylelint-webpack-plugin.svg)](https://www.npmjs.com/package/stylelint-webpack-plugin)                                                                            |        ✅         |       ✅       |
+| `vite-plugin-stylelint`                             | [![vite-plugin-stylelint](https://img.shields.io/npm/v/vite-plugin-stylelint.svg)](https://www.npmjs.com/package/vite-plugin-stylelint)                                                                                     |        ✅         |       ✅       |
 
-Total 49 packages.
+Total 51 packages.
 
-- **Stylelint 17.14.1**: ✅ 38 passed, ❌ 11 failed
-- **Stylelint HEAD**: ✅ 38 passed, ❌ 11 failed
+- **Stylelint 17.14.1**: ✅ 40 passed, ❌ 11 failed
+- **Stylelint HEAD**: ✅ 40 passed, ❌ 11 failed
 <!-- END:PACKAGES -->
 
 > [!NOTE]
