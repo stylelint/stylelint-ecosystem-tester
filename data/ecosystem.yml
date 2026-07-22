@@ -24,7 +24,8 @@ packages:
     # See: https://github.com/WordPress/gutenberg/tree/3a1fb6f3620d7b96180ad1761682e2e69c5a5332/packages/stylelint-config
     test-command: 'npx jest --rootDir . --testMatch "**/test/**/*.js" --testPathIgnorePatterns "/node_modules/" "/test/utils/"'
   jest-preset-stylelint: {}
-  nx-stylelint: {}
+  nx-stylelint:
+    package-manager: 'pnpm'
   stylelint-actions-formatters: {}
   stylelint-checkstyle-reporter: {}
   stylelint-config-clean-order:
@@ -69,4 +70,5 @@ packages:
   stylelint-use-nesting: {}
   stylelint-value-no-unknown-custom-properties: {}
   stylelint-webpack-plugin: {}
-  vite-plugin-stylelint: {}
+  vite-plugin-stylelint:
+    package-manager: 'pnpm'
