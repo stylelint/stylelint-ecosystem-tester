@@ -43,6 +43,11 @@ jest-preset-stylelint:
     status: success
   next:
     status: success
+nx-stylelint:
+  latest:
+    status: success
+  next:
+    status: success
 stylelint-actions-formatters:
   latest:
     status: success
@@ -239,6 +244,11 @@ stylelint-value-no-unknown-custom-properties:
   next:
     status: success
 stylelint-webpack-plugin:
+  latest:
+    status: success
+  next:
+    status: success
+vite-plugin-stylelint:
   latest:
     status: success
   next:
