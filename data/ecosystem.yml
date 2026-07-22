@@ -79,3 +79,4 @@ packages:
   vite-plugin-stylelint:
     package-manager: 'pnpm'
     corepack: true
+    test-command: 'npx vitest run'
