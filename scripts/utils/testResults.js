@@ -11,7 +11,9 @@ const file = fileURLToPath(new URL('../../data/test-results.yml', import.meta.ur
 export default yaml.parse(readFileSync(file, 'utf8'));
 
 export function writeTestResults(results) {
-	writeFileSync(file, yaml.stringify(results), 'utf8');
+	const content = `# Auto-generated file.\n${yaml.stringify(results)}`;
+
+	writeFileSync(file, content, 'utf8');
 
 	execFileSync('npx', ['prettier', '--write', file]);
 
