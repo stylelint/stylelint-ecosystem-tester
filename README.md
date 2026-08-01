@@ -76,6 +76,7 @@ Total 51 packages.
 
 - **Stylelint 17.14.1**: ✅ 40 passed, ❌ 11 failed
 - **Stylelint HEAD**: ✅ 40 passed, ❌ 11 failed
+
 <!-- END:PACKAGES -->
 
 > [!NOTE]
