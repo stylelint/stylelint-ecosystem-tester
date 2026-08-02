@@ -111,9 +111,9 @@ stylelint-config-standard-scss:
     status: success
 stylelint-config-standard-vue:
   latest:
-    status: failure
+    status: success
   next:
-    status: failure
+    status: success
 stylelint-config-suitcss:
   latest:
     status: failure
