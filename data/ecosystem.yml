@@ -36,20 +36,15 @@ packages:
   nx-stylelint:
     package-manager: 'pnpm'
   stylelint-actions-formatters: {}
-  stylelint-checkstyle-reporter: {}
   stylelint-config-clean-order:
     package-manager: 'pnpm'
   stylelint-config-css-modules: {}
   stylelint-config-html: {}
-  stylelint-config-idiomatic-order: {}
   stylelint-config-property-sort-order-smacss: {}
   stylelint-config-recess-order: {}
-  stylelint-config-recommended-scss: {}
-  stylelint-config-recommended-vue: {}
   stylelint-config-sass-guidelines: {}
   stylelint-config-standard-scss: {}
   stylelint-config-standard-vue: {}
-  stylelint-config-suitcss: {}
   stylelint-config-twbs-bootstrap: {}
   stylelint-config-wikimedia: {}
   stylelint-config-xo: {}
@@ -67,16 +62,10 @@ packages:
     package-manager: 'pnpm'
   stylelint-order: {}
   stylelint-plugin-defensive-css: {}
-  stylelint-plugin-logical-css: {}
   stylelint-prettier: {}
-  stylelint-react-native: {}
   stylelint-scss: {}
   stylelint-selector-bem-pattern: {}
-  stylelint-suitcss: {}
-  stylelint-use-logical: {}
-  stylelint-use-logical-spec: {}
   stylelint-use-nesting: {}
-  stylelint-value-no-unknown-custom-properties: {}
   stylelint-webpack-plugin: {}
   vite-plugin-stylelint:
     package-manager: 'pnpm'
