@@ -1,10 +1,20 @@
 # Auto-generated file.
+jest-preset-stylelint:
+  latest:
+    status: success
+  next:
+    status: success
 stylelint-config-recommended:
   latest:
     status: success
   next:
     status: success
 stylelint-config-standard:
+  latest:
+    status: success
+  next:
+    status: success
+stylelint-test-rule-node:
   latest:
     status: success
   next:
@@ -39,11 +49,6 @@ stylelint-config-standard:
     status: failure
   next:
     status: failure
-jest-preset-stylelint:
-  latest:
-    status: success
-  next:
-    status: success
 nx-stylelint:
   latest:
     status: success
@@ -54,11 +59,6 @@ stylelint-actions-formatters:
     status: success
   next:
     status: success
-stylelint-checkstyle-reporter:
-  latest:
-    status: failure
-  next:
-    status: failure
 stylelint-config-clean-order:
   latest:
     status: success
@@ -74,27 +74,12 @@ stylelint-config-html:
     status: success
   next:
     status: success
-stylelint-config-idiomatic-order:
-  latest:
-    status: failure
-  next:
-    status: failure
 stylelint-config-property-sort-order-smacss:
   latest:
     status: success
   next:
     status: success
 stylelint-config-recess-order:
-  latest:
-    status: success
-  next:
-    status: success
-stylelint-config-recommended-scss:
-  latest:
-    status: success
-  next:
-    status: success
-stylelint-config-recommended-vue:
   latest:
     status: success
   next:
@@ -114,11 +99,6 @@ stylelint-config-standard-vue:
     status: success
   next:
     status: success
-stylelint-config-suitcss:
-  latest:
-    status: failure
-  next:
-    status: failure
 stylelint-config-twbs-bootstrap:
   latest:
     status: failure
@@ -189,7 +169,7 @@ stylelint-plugin-defensive-css:
     status: success
   next:
     status: success
-stylelint-plugin-logical-css:
+stylelint-plugin-use-baseline:
   latest:
     status: success
   next:
@@ -199,11 +179,6 @@ stylelint-prettier:
     status: success
   next:
     status: success
-stylelint-react-native:
-  latest:
-    status: failure
-  next:
-    status: failure
 stylelint-scss:
   latest:
     status: success
@@ -214,32 +189,7 @@ stylelint-selector-bem-pattern:
     status: success
   next:
     status: success
-stylelint-suitcss:
-  latest:
-    status: failure
-  next:
-    status: failure
-stylelint-test-rule-node:
-  latest:
-    status: success
-  next:
-    status: success
-stylelint-use-logical:
-  latest:
-    status: success
-  next:
-    status: success
-stylelint-use-logical-spec:
-  latest:
-    status: success
-  next:
-    status: success
 stylelint-use-nesting:
-  latest:
-    status: success
-  next:
-    status: success
-stylelint-value-no-unknown-custom-properties:
   latest:
     status: success
   next:
