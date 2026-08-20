@@ -33,7 +33,8 @@ if (inputPackageNames.size > 0) {
 
 const DEFAULT_PACKAGE_INFO = {
 	'install-deps-command': 'npm install --ignore-scripts --no-audit',
-	'install-stylelint-command': 'npm install --ignore-scripts --no-audit --no-save --allow-git=all',
+	'install-stylelint-command':
+		'npm install --ignore-scripts --no-audit --no-save --allow-git=all --min-release-age=1',
 	'list-command': 'npm list stylelint',
 	'build-command': 'npm run --if-present build',
 	'test-command': 'npm test',
@@ -42,6 +43,7 @@ const DEFAULT_PACKAGE_INFO = {
 const ADVANCED_PACKAGE_INFO = {
 	pnpm: {
 		'install-deps-command': 'pnpm install --ignore-scripts --no-frozen-lockfile',
+		// TODO: Add --min-release-age after it's implemented. Ref: https://github.com/pnpm/pnpm/issues/11224
 		'install-stylelint-command': 'pnpm add --ignore-scripts',
 		'list-command': 'pnpm list stylelint',
 		'build-command': 'pnpm run --if-present build',
@@ -49,6 +51,7 @@ const ADVANCED_PACKAGE_INFO = {
 	},
 	yarn: {
 		'install-deps-command': 'yarn install --ignore-scripts',
+		// NOTE: Yarn v1 doesn't have a flag like --min-release-age, although Yarn v2 has --no-time-gate.
 		'install-stylelint-command': 'yarn add --ignore-scripts --pure-lockfile',
 		'list-command': 'yarn list --pattern stylelint',
 	},
