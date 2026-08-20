@@ -62,6 +62,7 @@ packages:
     package-manager: 'pnpm'
   stylelint-order: {}
   stylelint-plugin-defensive-css: {}
+  stylelint-plugin-use-baseline: {}
   stylelint-prettier: {}
   stylelint-scss: {}
   stylelint-selector-bem-pattern: {}
