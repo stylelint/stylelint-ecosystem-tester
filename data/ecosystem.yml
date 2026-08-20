@@ -6,9 +6,13 @@
 
 packages:
   # Official
+  jest-preset-stylelint:
+    official: true
   stylelint-config-recommended:
     official: true
   stylelint-config-standard:
+    official: true
+  stylelint-test-rule-node:
     official: true
 
   # In alphabetical order
@@ -29,7 +33,6 @@ packages:
     # The package has no `npm test` script in its monorepo.
     # See: https://github.com/WordPress/gutenberg/tree/3a1fb6f3620d7b96180ad1761682e2e69c5a5332/packages/stylelint-config
     test-command: 'npx jest --rootDir . --testMatch "**/test/**/*.js" --testPathIgnorePatterns "/node_modules/" "/test/utils/"'
-  jest-preset-stylelint: {}
   nx-stylelint:
     package-manager: 'pnpm'
   stylelint-actions-formatters: {}
@@ -62,7 +65,6 @@ packages:
   stylelint-prettier: {}
   stylelint-scss: {}
   stylelint-selector-bem-pattern: {}
-  stylelint-test-rule-node: {}
   stylelint-use-nesting: {}
   stylelint-webpack-plugin: {}
   vite-plugin-stylelint:
