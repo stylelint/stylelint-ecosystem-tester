@@ -2,13 +2,13 @@
 
 Thank you for wanting to contribute.
 
-To add your package to this test suite, please follow these steps:
+To add a package to this test suite:
 
 1. Check if the package meets the [criteria](README.md#criteria).
 2. Add the package to the [list](data/ecosystem.yml).
 3. Open a pull request titled `` Add `{package}` `` with the edited file.
 
-The README status table is generated automatically, so there is no need to update it yourself.
+The README status table is generated automatically.
 
 ## For maintainers
 
