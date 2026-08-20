@@ -64,17 +64,13 @@ packages:
     package-manager: 'pnpm'
   stylelint-order: {}
   stylelint-plugin-defensive-css: {}
-  stylelint-plugin-logical-css: {}
   stylelint-prettier: {}
   stylelint-react-native: {}
   stylelint-scss: {}
   stylelint-selector-bem-pattern: {}
   stylelint-suitcss: {}
   stylelint-test-rule-node: {}
-  stylelint-use-logical: {}
-  stylelint-use-logical-spec: {}
   stylelint-use-nesting: {}
-  stylelint-value-no-unknown-custom-properties: {}
   stylelint-webpack-plugin: {}
   vite-plugin-stylelint:
     package-manager: 'pnpm'
