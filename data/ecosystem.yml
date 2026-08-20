@@ -41,8 +41,6 @@ packages:
   stylelint-config-idiomatic-order: {}
   stylelint-config-property-sort-order-smacss: {}
   stylelint-config-recess-order: {}
-  stylelint-config-recommended-scss: {}
-  stylelint-config-recommended-vue: {}
   stylelint-config-sass-guidelines: {}
   stylelint-config-standard-scss: {}
   stylelint-config-standard-vue: {}
