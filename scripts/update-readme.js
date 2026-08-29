@@ -4,11 +4,40 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import process from 'node:process';
 
+import hostedGitInfo from 'hosted-git-info';
+
 import ecosystemData from './utils/ecosystemData.js';
 import testResults from './utils/testResults.js';
 
 function npmBadge(pkg) {
 	return `[![${pkg}](https://img.shields.io/npm/v/${pkg}.svg)](https://www.npmjs.com/package/${pkg})`;
+}
+
+function repoLink(pkg) {
+	let raw;
+
+	try {
+		raw = execFileSync('npm', ['view', pkg, 'repository', '--json']).toString().trim();
+	} catch {
+		return '';
+	}
+
+	if (!raw) return '';
+
+	let repository = JSON.parse(raw);
+
+	if (Array.isArray(repository)) {
+		repository = repository.at(-1);
+	}
+
+	const url = typeof repository === 'string' ? repository : repository?.url;
+	const info = hostedGitInfo.fromUrl(url);
+
+	if (!info) return '';
+
+	const directory = typeof repository === 'object' ? repository?.directory : undefined;
+
+	return `[${info.type}](${info.browse(directory)})`;
 }
 
 function isOfficial(pkg) {
@@ -32,8 +61,10 @@ const latestStylelintVersion = execFileSync('npm', ['view', 'stylelint', 'versio
 
 const packageLines = [];
 
-packageLines.push(`| Package | npm | Stylelint ${latestStylelintVersion} | Stylelint HEAD |`);
-packageLines.push('| :------ | :-- | :--------------: | :------------: |');
+packageLines.push(
+	`| Package | npm | Repo | Stylelint ${latestStylelintVersion} | Stylelint HEAD |`,
+);
+packageLines.push('| :------ | :-- | :--- | :--------------: | :------------: |');
 
 let packagesCount = 0;
 const counts = {
@@ -47,7 +78,7 @@ for (const [pkg, result] of sortedEntries) {
 	const pkgLabel = isOfficial(pkg) ? `\`${pkg}\` ⭐` : `\`${pkg}\``;
 
 	packageLines.push(
-		`| ${pkgLabel} | ${npmBadge(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
+		`| ${pkgLabel} | ${npmBadge(pkg)} | ${repoLink(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
 	);
 	packagesCount += 1;
 
