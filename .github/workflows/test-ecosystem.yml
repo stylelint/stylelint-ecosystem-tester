@@ -116,12 +116,14 @@ jobs:
           package-manager-cache: false
 
       - name: Install latest npm
+        working-directory: ${{ runner.temp }}
         run: |
           npm install --global npm@latest
           echo "npm: $(npm --version)"
 
       - name: Install Corepack
         if: ${{ steps.info.outputs.corepack }}
+        working-directory: ${{ runner.temp }}
         run: |
           npm install --global corepack
           echo "corepack: $(corepack --version)"
@@ -131,9 +133,15 @@ jobs:
         if: ${{ steps.info.outputs.package-manager == 'pnpm' && !steps.info.outputs.corepack }}
         env:
           STYLELINT_PACKAGE_SPEC: ${{ steps.info.outputs.stylelint-package-spec }}
+          PNPM_VERSION: 12
         run: |
-          npm install --global pnpm
+          # Ref: https://github.com/pnpm/get.pnpm.io/tree/main/get-pnpm
+          export PNPM_HOME="${RUNNER_TEMP}/pnpm"
+          (cd "${RUNNER_TEMP}" && npx get-pnpm)
+
+          export PATH="${PNPM_HOME}/bin:${PATH}"
           echo "pnpm: $(pnpm --version)"
+          echo "${PNPM_HOME}/bin" >> "${GITHUB_PATH}"
 
           # Set overrides. See below:
           # - https://pnpm.io/cli/config
@@ -143,6 +151,7 @@ jobs:
 
       - name: Install yarn
         if: ${{ steps.info.outputs.package-manager == 'yarn' && !steps.info.outputs.corepack }}
+        working-directory: ${{ runner.temp }}
         run: |
           npm install --global yarn
           echo "yarn: $(yarn --version)"
