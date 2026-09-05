@@ -131,9 +131,15 @@ jobs:
         if: ${{ steps.info.outputs.package-manager == 'pnpm' && !steps.info.outputs.corepack }}
         env:
           STYLELINT_PACKAGE_SPEC: ${{ steps.info.outputs.stylelint-package-spec }}
+          PNPM_VERSION: 12
         run: |
-          npm install --global pnpm
+          # Ref: https://github.com/pnpm/get.pnpm.io/tree/main/get-pnpm
+          export PNPM_HOME="${RUNNER_TEMP}/pnpm"
+          npx get-pnpm
+
+          export PATH="${PNPM_HOME}/bin:${PATH}"
           echo "pnpm: $(pnpm --version)"
+          echo "${PNPM_HOME}/bin" >> "${GITHUB_PATH}"
 
           # Set overrides. See below:
           # - https://pnpm.io/cli/config
