@@ -41,9 +41,9 @@ stylelint-test-rule-node:
     status: success
 '@stylistic/stylelint-plugin':
   latest:
-    status: success
+    status: failure
   next:
-    status: success
+    status: failure
 '@wordpress/stylelint-config':
   latest:
     status: failure
