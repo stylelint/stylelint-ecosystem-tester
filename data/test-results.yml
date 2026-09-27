@@ -23,7 +23,7 @@ stylelint-test-rule-node:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 '@primer/stylelint-config':
   latest:
     status: failure
@@ -43,7 +43,7 @@ stylelint-test-rule-node:
   latest:
     status: failure
   next:
-    status: failure
+    status: success
 '@wordpress/stylelint-config':
   latest:
     status: failure
@@ -108,7 +108,7 @@ stylelint-config-wikimedia:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-xo:
   latest:
     status: success
@@ -178,7 +178,7 @@ stylelint-prettier:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-scss:
   latest:
     status: success
