@@ -18,7 +18,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 
 <!-- START:PACKAGES -->
 
-| Package                                             | npm                                                                                                                                                                                                                         | Repo                                                                                         | Stylelint 17.15.0 | Stylelint HEAD |
+| Package                                             | npm                                                                                                                                                                                                                         | Repo                                                                                         | Stylelint 17.16.0 | Stylelint HEAD |
 | :-------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- | :---------------: | :------------: |
 | `jest-preset-stylelint` ⭐                          | [![jest-preset-stylelint](https://img.shields.io/npm/v/jest-preset-stylelint.svg)](https://www.npmjs.com/package/jest-preset-stylelint)                                                                                     | [github](https://github.com/stylelint/jest-preset-stylelint)                                 |        ✅         |       ✅       |
 | `stylelint-config-recommended` ⭐                   | [![stylelint-config-recommended](https://img.shields.io/npm/v/stylelint-config-recommended.svg)](https://www.npmjs.com/package/stylelint-config-recommended)                                                                | [github](https://github.com/stylelint/stylelint-config-recommended)                          |        ✅         |       ✅       |
@@ -64,7 +64,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 
 Total 41 packages.
 
-- **Stylelint 17.15.0**: ✅ 35 passed, ❌ 6 failed
+- **Stylelint 17.16.0**: ✅ 35 passed, ❌ 6 failed
 - **Stylelint HEAD**: ✅ 33 passed, ❌ 8 failed
 
 <!-- END:PACKAGES -->
