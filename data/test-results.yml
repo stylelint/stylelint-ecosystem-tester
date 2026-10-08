@@ -148,7 +148,7 @@ stylelint-less:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-media-use-custom-media:
   latest:
     status: success
@@ -158,12 +158,12 @@ stylelint-no-unsupported-browser-features:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-order:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-plugin-defensive-css:
   latest:
     status: success
@@ -183,12 +183,12 @@ stylelint-scss:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-selector-bem-pattern:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-use-nesting:
   latest:
     status: success
