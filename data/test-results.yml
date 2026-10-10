@@ -13,7 +13,7 @@ stylelint-config-standard:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-test-rule-node:
   latest:
     status: success
@@ -68,7 +68,7 @@ stylelint-config-css-modules:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-html:
   latest:
     status: success
@@ -93,7 +93,7 @@ stylelint-config-standard-scss:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-standard-vue:
   latest:
     status: success
