@@ -146,9 +146,9 @@ stylelint-high-performance-animation:
     status: success
 stylelint-less:
   latest:
-    status: failure
+    status: success
   next:
-    status: failure
+    status: success
 stylelint-media-use-custom-media:
   latest:
     status: success

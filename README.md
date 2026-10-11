@@ -49,7 +49,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-declaration-strict-value`                | [![stylelint-declaration-strict-value](https://img.shields.io/npm/v/stylelint-declaration-strict-value.svg)](https://www.npmjs.com/package/stylelint-declaration-strict-value)                                              | [github](https://github.com/AndyOGo/stylelint-declaration-strict-value)                      |        ✅         |       ✅       |
 | `stylelint-formatter-pretty`                        | [![stylelint-formatter-pretty](https://img.shields.io/npm/v/stylelint-formatter-pretty.svg)](https://www.npmjs.com/package/stylelint-formatter-pretty)                                                                      | [github](https://github.com/mrcgrtz/stylelint-formatter-pretty)                              |        ✅         |       ✅       |
 | `stylelint-high-performance-animation`              | [![stylelint-high-performance-animation](https://img.shields.io/npm/v/stylelint-high-performance-animation.svg)](https://www.npmjs.com/package/stylelint-high-performance-animation)                                        | [github](https://github.com/kristerkari/stylelint-high-performance-animation)                |        ✅         |       ✅       |
-| `stylelint-less`                                    | [![stylelint-less](https://img.shields.io/npm/v/stylelint-less.svg)](https://www.npmjs.com/package/stylelint-less)                                                                                                          | [github](https://github.com/stylelint-less/stylelint-less/tree/HEAD/packages/stylelint-less) |        ❌         |       ❌       |
+| `stylelint-less`                                    | [![stylelint-less](https://img.shields.io/npm/v/stylelint-less.svg)](https://www.npmjs.com/package/stylelint-less)                                                                                                          | [github](https://github.com/stylelint-less/stylelint-less/tree/HEAD/packages/stylelint-less) |        ✅         |       ✅       |
 | `stylelint-media-use-custom-media`                  | [![stylelint-media-use-custom-media](https://img.shields.io/npm/v/stylelint-media-use-custom-media.svg)](https://www.npmjs.com/package/stylelint-media-use-custom-media)                                                    | [github](https://github.com/csstools/stylelint-media-use-custom-media)                       |        ✅         |       ✅       |
 | `stylelint-no-unsupported-browser-features`         | [![stylelint-no-unsupported-browser-features](https://img.shields.io/npm/v/stylelint-no-unsupported-browser-features.svg)](https://www.npmjs.com/package/stylelint-no-unsupported-browser-features)                         | [github](https://github.com/RJWadley/stylelint-no-unsupported-browser-features)              |        ✅         |       ✅       |
 | `stylelint-order`                                   | [![stylelint-order](https://img.shields.io/npm/v/stylelint-order.svg)](https://www.npmjs.com/package/stylelint-order)                                                                                                       | [github](https://github.com/hudochenkov/stylelint-order)                                     |        ✅         |       ✅       |
@@ -64,8 +64,8 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 
 Total 41 packages.
 
-- **Stylelint 17.16.0**: ✅ 34 passed, ❌ 7 failed
-- **Stylelint HEAD**: ✅ 28 passed, ❌ 13 failed
+- **Stylelint 17.16.0**: ✅ 35 passed, ❌ 6 failed
+- **Stylelint HEAD**: ✅ 29 passed, ❌ 12 failed
 
 <!-- END:PACKAGES -->
 
