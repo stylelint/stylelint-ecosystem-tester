@@ -33,7 +33,7 @@ packages:
     # The package has no `npm test` script in its monorepo.
     # See: https://github.com/WordPress/gutenberg/blob/4731d7f638dc6a213310ec0b2ff187e3365e2442/packages/stylelint-config/package.json
     test-command: >-
-      npm --prefix "../.." install --workspace=@wordpress/unit-tests
+      npm --prefix "../.." install --workspace=@wordpress/unit-tests --ignore-scripts --no-audit
       && npm --prefix "../.." run test:unit -- "$(git rev-parse --show-prefix)"
   nx-stylelint:
     package-manager: 'pnpm'
