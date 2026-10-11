@@ -2,6 +2,7 @@
 # - official (boolean): Whether it's an official Stylelint package.
 # - package-manager (enum): npm, pnpm, or, yarn.
 # - corepack (boolean): Whether to use Corepack.
+# - install-command (string): Command to install dependencies.
 # - test-command (string): Command to run tests.
 
 packages:
@@ -30,11 +31,11 @@ packages:
     package-manager: 'pnpm'
     test-command: 'make test'
   '@wordpress/stylelint-config':
-    # The package has no `npm test` script in its monorepo.
-    # See: https://github.com/WordPress/gutenberg/blob/4731d7f638dc6a213310ec0b2ff187e3365e2442/packages/stylelint-config/package.json
-    test-command: >-
-      npm --prefix "../.." install --workspace=@wordpress/unit-tests --ignore-scripts --no-audit
-      && npm --prefix "../.." run test:unit -- "$(git rev-parse --show-prefix)"
+    # The package has no `npm test` script in its monorepo. See below:
+    # - https://github.com/WordPress/gutenberg/blob/4731d7f638dc6a213310ec0b2ff187e3365e2442/package.json#L205
+    # - https://github.com/WordPress/gutenberg/blob/4731d7f638dc6a213310ec0b2ff187e3365e2442/packages/stylelint-config/package.json
+    install-command: 'npm --prefix "../.." install --ignore-scripts --no-audit'
+    test-command: 'npm --prefix "../.." run test:unit -- "$(git rev-parse --show-prefix)"'
   nx-stylelint:
     package-manager: 'pnpm'
   stylelint-actions-formatters: {}
