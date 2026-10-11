@@ -23,7 +23,7 @@ stylelint-test-rule-node:
   latest:
     status: success
   next:
-    status: failure
+    status: success
 '@primer/stylelint-config':
   latest:
     status: failure
@@ -146,7 +146,7 @@ stylelint-high-performance-animation:
     status: success
 stylelint-less:
   latest:
-    status: success
+    status: failure
   next:
     status: failure
 stylelint-media-use-custom-media:
@@ -158,12 +158,12 @@ stylelint-no-unsupported-browser-features:
   latest:
     status: success
   next:
-    status: failure
+    status: success
 stylelint-order:
   latest:
     status: success
   next:
-    status: failure
+    status: success
 stylelint-plugin-defensive-css:
   latest:
     status: success
