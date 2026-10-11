@@ -147,7 +147,12 @@ jobs:
           # - https://pnpm.io/cli/config
           # - https://pnpm.io/settings#dependency-resolution
           pnpm config set --location=project --json overrides "{\"stylelint\":\"${STYLELINT_PACKAGE_SPEC}\"}"
-          pnpm config get --location=project --json overrides
+          echo "overrides: $(pnpm config get --location=project --json overrides)"
+
+          # Relax `minimumReleaseAge` to prevent temporary occurrences of `ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION`.
+          # See: https://pnpm.io/settings/dependency-resolution#minimumreleaseage
+          pnpm config set --location=project minimumReleaseAge 1
+          echo "minimumReleaseAge: $(pnpm config get --location=project minimumReleaseAge)"
 
       - name: Install yarn
         if: ${{ steps.info.outputs.package-manager == 'yarn' && !steps.info.outputs.corepack }}
