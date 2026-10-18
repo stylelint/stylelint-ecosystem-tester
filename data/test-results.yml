@@ -43,7 +43,7 @@ stylelint-test-rule-node:
   latest:
     status: failure
   next:
-    status: success
+    status: failure
 '@wordpress/stylelint-config':
   latest:
     status: success
