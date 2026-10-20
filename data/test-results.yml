@@ -188,7 +188,7 @@ stylelint-selector-bem-pattern:
   latest:
     status: success
   next:
-    status: failure
+    status: success
 stylelint-use-nesting:
   latest:
     status: success
