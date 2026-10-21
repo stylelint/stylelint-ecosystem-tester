@@ -75,9 +75,8 @@ const stylelint = {
 		'stylelint-package-spec': 'latest',
 	},
 	next: {
-		// TODO: Drop "v18" after v18.0.0 is released.
-		'stylelint-install': 'github:stylelint/stylelint#v18',
-		'stylelint-package-spec': 'github:stylelint/stylelint#v18',
+		'stylelint-install': 'github:stylelint/stylelint',
+		'stylelint-package-spec': 'github:stylelint/stylelint',
 	},
 };
 
