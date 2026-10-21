@@ -3,12 +3,12 @@ jest-preset-stylelint:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-recommended:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-standard:
   latest:
     status: success
@@ -18,12 +18,12 @@ stylelint-test-rule-node:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 '@double-great/stylelint-a11y':
   latest:
     status: success
   next:
-    status: success
+    status: failure
 '@primer/stylelint-config':
   latest:
     status: failure
@@ -38,12 +38,12 @@ stylelint-test-rule-node:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 '@stylistic/stylelint-plugin':
   latest:
     status: failure
   next:
-    status: success
+    status: failure
 '@wordpress/stylelint-config':
   latest:
     status: success
@@ -53,17 +53,17 @@ nx-stylelint:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-actions-formatters:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-clean-order:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-css-modules:
   latest:
     status: success
@@ -73,17 +73,17 @@ stylelint-config-html:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-property-sort-order-smacss:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-recess-order:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-sass-guidelines:
   latest:
     status: failure
@@ -98,7 +98,7 @@ stylelint-config-standard-vue:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-twbs-bootstrap:
   latest:
     status: failure
@@ -113,67 +113,67 @@ stylelint-config-xo:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-config-xo-scss:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-csstree-validator:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-declaration-block-no-ignored-properties:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-declaration-strict-value:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-formatter-pretty:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-high-performance-animation:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-less:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-media-use-custom-media:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-no-unsupported-browser-features:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-order:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-plugin-defensive-css:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-plugin-use-baseline:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-prettier:
   latest:
     status: success
@@ -188,19 +188,19 @@ stylelint-selector-bem-pattern:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-use-nesting:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 stylelint-webpack-plugin:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 vite-plugin-stylelint:
   latest:
     status: success
   next:
-    status: success
+    status: failure
