@@ -3,6 +3,8 @@
 # - package-manager (enum): npm, pnpm, or, yarn.
 # - corepack (boolean): Whether to use Corepack.
 # - install-deps-command (string): Command to install dependencies.
+# - install-stylelint-command (string): Command to install Stylelint.
+# - refs (object): Git refs keyed by Stylelint version. Defaults to the default branch.
 # - test-command (string): Command to run tests.
 
 packages:
@@ -11,8 +13,16 @@ packages:
     official: true
   stylelint-config-recommended:
     official: true
+    # TODO: Remove `refs` after Stylelint 18.0.0 is released.
+    # The default branch targets the next major Stylelint (v18), so test the latest release with the latest Stylelint.
+    refs:
+      latest: '18.0.0'
   stylelint-config-standard:
     official: true
+    # TODO: Remove `refs` after Stylelint 18.0.0 is released.
+    # The default branch targets the next major Stylelint (v18), so test the latest release with the latest Stylelint.
+    refs:
+      latest: '40.0.0'
   stylelint-test-rule-node:
     official: true
 
@@ -47,7 +57,11 @@ packages:
   stylelint-config-recess-order: {}
   stylelint-config-sass-guidelines: {}
   stylelint-config-standard-scss: {}
-  stylelint-config-standard-vue: {}
+  stylelint-config-standard-vue:
+    # TODO: Remove this override after the package dependencies support Stylelint 18.
+    # `stylelint` is only a peer dependency, so npm cannot replace it with `--no-save`.
+    # `--force` overrides the conflicting `stylelint` peer range without ignoring all peers.
+    install-stylelint-command: 'npm install --ignore-scripts --no-audit --save-dev --allow-git=all --min-release-age=1 --force'
   stylelint-config-twbs-bootstrap: {}
   stylelint-config-wikimedia: {}
   stylelint-config-xo: {}
