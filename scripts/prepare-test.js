@@ -80,4 +80,18 @@ const stylelint = {
 	},
 };
 
+const stylelintVersions = new Set(Object.keys(stylelint));
+
+for (const [name, info] of Object.entries(packages)) {
+	for (const [version, ref] of Object.entries(info.refs ?? {})) {
+		if (!stylelintVersions.has(version)) {
+			throw new Error(`Unknown Stylelint version "${version}" in refs for "${name}"`);
+		}
+
+		if (typeof ref !== 'string' || ref.trim() === '') {
+			throw new Error(`Invalid ref for "${name}" (${version}): ${JSON.stringify(ref)}`);
+		}
+	}
+}
+
 process.stdout.write(JSON.stringify({ packages, stylelint }));
