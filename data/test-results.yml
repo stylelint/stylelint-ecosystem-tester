@@ -6,14 +6,14 @@ jest-preset-stylelint:
     status: success
 stylelint-config-recommended:
   latest:
-    status: success
+    status: failure
   next:
     status: success
 stylelint-config-standard:
   latest:
-    status: success
-  next:
     status: failure
+  next:
+    status: success
 stylelint-test-rule-node:
   latest:
     status: success
