@@ -183,7 +183,7 @@ stylelint-scss:
   latest:
     status: success
   next:
-    status: failure
+    status: success
 stylelint-selector-bem-pattern:
   latest:
     status: success
