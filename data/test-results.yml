@@ -46,7 +46,7 @@ stylelint-test-rule-node:
     status: success
 '@wordpress/stylelint-config':
   latest:
-    status: success
+    status: failure
   next:
     status: failure
 nx-stylelint:
@@ -196,9 +196,9 @@ stylelint-use-nesting:
     status: success
 stylelint-webpack-plugin:
   latest:
-    status: success
+    status: failure
   next:
-    status: success
+    status: failure
 vite-plugin-stylelint:
   latest:
     status: success
