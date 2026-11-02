@@ -1,4 +1,3 @@
-// eslint-disable-next-line n/no-unsupported-features/node-builtins -- TODO: Suppress error on `globSync` temporarily.
 import { globSync, readFileSync } from 'node:fs';
 import process from 'node:process';
 
