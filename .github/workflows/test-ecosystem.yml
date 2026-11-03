@@ -40,8 +40,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: latest
-          cache: npm
+          node-version-file: package.json
 
       - name: Install dependencies
         run: npm ci
@@ -115,7 +114,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: latest
+          node-version: 'lts/*'
           # NOTE: To avoid the error "Unable to locate executable file: pnpm", it disables cache.
           # Ref https://github.com/actions/setup-node/issues/1357
           package-manager-cache: false
@@ -292,8 +291,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: latest
-          cache: npm
+          node-version-file: package.json
 
       - name: Install dependencies
         run: npm ci
@@ -325,26 +323,39 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          PR_TITLE: 'Update ecosystem test results'
+          PR_BRANCH: 'ecosystem-test-results'
+          INPUT_PACKAGES: ${{ inputs.packages }}
         run: |
+          pr=$(gh pr view "${PR_BRANCH}" --json 'state,url' 2>/dev/null || echo '{}')
+          state=$(jq -r '.state // ""' <<< "${pr}")
+          url=$(jq -r '.url // ""' <<< "${pr}")
+
           if git diff --quiet -- data/test-results.yml README.md; then
             echo "No changes in ecosystem test results."
+
+            if [[ -z "${INPUT_PACKAGES}" && "${state}" == "OPEN" ]]; then
+              gh pr close "${url}" --delete-branch \
+                --comment "Closing because the latest full test run found no changes. See the [workflow run](${RUN_URL})."
+              echo "::notice::Closed pull request: ${url}"
+            fi
+
             exit 0
           fi
 
-          branch="ecosystem-test-results"
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-          git switch -C "${branch}"
+          git switch --force-create "${PR_BRANCH}"
           git add data/test-results.yml README.md
           git commit -m "Update ecosystem test results"
-          git push --force origin "${branch}"
+          git push --force origin "${PR_BRANCH}"
 
-          state=$(gh pr view "${branch}" --json state --jq '.state' 2>/dev/null || echo '')
+          body="Automated update of ecosystem test results from the [workflow run](${RUN_URL})."
           if [[ "${state}" == "OPEN" ]]; then
-            echo "An open pull request already exists; its branch has been updated."
+            action="Updated"
+            gh pr edit "${url}" --body "${body}"
           else
-            url=$(gh pr create --head "${branch}" --base "${GITHUB_REF_NAME}" \
-              --title "Update ecosystem test results" \
-              --body "Automated update of ecosystem test results from the [workflow run](${RUN_URL}).")
-            echo "::notice::Created pull request: ${url}"
+            action="Created"
+            url=$(gh pr create --head "${PR_BRANCH}" --base "${GITHUB_REF_NAME}" --title "${PR_TITLE}" --body "${body}")
           fi
+          echo "::notice::${action} pull request: ${url}"
