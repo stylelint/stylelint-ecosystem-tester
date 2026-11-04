@@ -6,12 +6,12 @@ jest-preset-stylelint:
     status: success
 stylelint-config-recommended:
   latest:
-    status: failure
+    status: success
   next:
     status: success
 stylelint-config-standard:
   latest:
-    status: failure
+    status: success
   next:
     status: success
 stylelint-test-rule-node:
@@ -41,7 +41,7 @@ stylelint-test-rule-node:
     status: success
 '@stylistic/stylelint-plugin':
   latest:
-    status: failure
+    status: success
   next:
     status: success
 '@wordpress/stylelint-config':
