@@ -13,16 +13,8 @@ packages:
     official: true
   stylelint-config-recommended:
     official: true
-    # TODO: Remove `refs` after Stylelint 18.0.0 is released.
-    # The default branch targets the next major Stylelint (v18), so test the latest release with the latest Stylelint.
-    refs:
-      latest: '18.0.0'
   stylelint-config-standard:
     official: true
-    # TODO: Remove `refs` after Stylelint 18.0.0 is released.
-    # The default branch targets the next major Stylelint (v18), so test the latest release with the latest Stylelint.
-    refs:
-      latest: '40.0.0'
   stylelint-test-rule-node:
     official: true
 
