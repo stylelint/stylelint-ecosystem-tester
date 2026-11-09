@@ -43,10 +43,10 @@ stylelint-test-rule-node:
   latest:
     status: success
   next:
-    status: success
+    status: failure
 '@wordpress/stylelint-config':
   latest:
-    status: success
+    status: failure
   next:
     status: failure
 nx-stylelint:
@@ -66,7 +66,7 @@ stylelint-config-clean-order:
     status: success
 stylelint-config-css-modules:
   latest:
-    status: success
+    status: failure
   next:
     status: failure
 stylelint-config-html:
@@ -91,14 +91,14 @@ stylelint-config-sass-guidelines:
     status: failure
 stylelint-config-standard-scss:
   latest:
-    status: success
+    status: failure
   next:
     status: failure
 stylelint-config-standard-vue:
   latest:
-    status: success
+    status: failure
   next:
-    status: success
+    status: failure
 stylelint-config-twbs-bootstrap:
   latest:
     status: failure
@@ -106,7 +106,7 @@ stylelint-config-twbs-bootstrap:
     status: failure
 stylelint-config-wikimedia:
   latest:
-    status: success
+    status: failure
   next:
     status: failure
 stylelint-config-xo:
@@ -178,7 +178,7 @@ stylelint-prettier:
   latest:
     status: success
   next:
-    status: failure
+    status: success
 stylelint-scss:
   latest:
     status: success
