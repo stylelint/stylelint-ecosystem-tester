@@ -91,9 +91,9 @@ stylelint-config-sass-guidelines:
     status: failure
 stylelint-config-standard-scss:
   latest:
-    status: failure
+    status: success
   next:
-    status: failure
+    status: success
 stylelint-config-standard-vue:
   latest:
     status: failure
