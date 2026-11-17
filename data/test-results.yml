@@ -4,203 +4,285 @@ jest-preset-stylelint:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-config-recommended:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: failure
 stylelint-config-standard:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: failure
 stylelint-test-rule-node:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 '@double-great/stylelint-a11y':
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 '@primer/stylelint-config':
   latest:
     status: failure
   next:
+    status: failure
+  previous:
     status: failure
 '@shopify/stylelint-plugin':
   latest:
     status: failure
   next:
     status: failure
+  previous:
+    status: failure
 '@stylistic/stylelint-config':
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 '@stylistic/stylelint-plugin':
   latest:
     status: success
   next:
     status: failure
+  previous:
+    status: failure
 '@wordpress/stylelint-config':
   latest:
     status: failure
   next:
+    status: failure
+  previous:
     status: failure
 nx-stylelint:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-actions-formatters:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-config-clean-order:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-config-css-modules:
   latest:
     status: failure
   next:
+    status: failure
+  previous:
     status: failure
 stylelint-config-html:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-config-property-sort-order-smacss:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-config-recess-order:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-config-sass-guidelines:
   latest:
     status: failure
   next:
+    status: failure
+  previous:
     status: failure
 stylelint-config-standard-scss:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: failure
 stylelint-config-standard-vue:
   latest:
     status: failure
   next:
     status: failure
+  previous:
+    status: success
 stylelint-config-twbs-bootstrap:
   latest:
     status: failure
   next:
+    status: failure
+  previous:
     status: failure
 stylelint-config-wikimedia:
   latest:
     status: failure
   next:
     status: failure
+  previous:
+    status: success
 stylelint-config-xo:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-config-xo-scss:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-csstree-validator:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-declaration-block-no-ignored-properties:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-declaration-strict-value:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-formatter-pretty:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-high-performance-animation:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-less:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-media-use-custom-media:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-no-unsupported-browser-features:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-order:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-plugin-defensive-css:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-plugin-use-baseline:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-prettier:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-scss:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-selector-bem-pattern:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 stylelint-use-nesting:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
 stylelint-webpack-plugin:
   latest:
     status: success
   next:
     status: success
+  previous:
+    status: success
 vite-plugin-stylelint:
   latest:
     status: success
   next:
+    status: success
+  previous:
     status: success
