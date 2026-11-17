@@ -7,6 +7,7 @@ import process from 'node:process';
 import hostedGitInfo from 'hosted-git-info';
 
 import ecosystemData from './utils/ecosystemData.js';
+import stylelintVersions from './utils/stylelintVersions.js';
 import testResults from './utils/testResults.js';
 
 function npmBadge(pkg) {
@@ -55,22 +56,27 @@ function statusEmoji(status) {
 	}
 }
 
-const latestStylelintVersion = execFileSync('npm', ['view', 'stylelint', 'version'])
-	.toString()
-	.trim();
+const { previous: previousStylelintVersion, latest: latestStylelintVersion } = stylelintVersions;
+
+const stylelintTargets = [
+	{ key: 'previous', label: `Stylelint ${previousStylelintVersion}` },
+	{ key: 'latest', label: `Stylelint ${latestStylelintVersion}` },
+	{ key: 'next', label: 'Stylelint HEAD' },
+];
 
 const packageLines = [];
 
 packageLines.push(
-	`| Package | npm | Repo | Stylelint ${latestStylelintVersion} | Stylelint HEAD |`,
+	`| Package | npm | Repo | ${stylelintTargets.map(({ label }) => label).join(' | ')} |`,
 );
-packageLines.push('| :------ | :-- | :--- | :--------------: | :------------: |');
+packageLines.push(
+	`| :------ | :-- | :--- | ${stylelintTargets.map(() => ':--------------:').join(' | ')} |`,
+);
 
 let packagesCount = 0;
-const counts = {
-	latest: { passed: 0, failed: 0 },
-	next: { passed: 0, failed: 0 },
-};
+const counts = Object.fromEntries(
+	stylelintTargets.map(({ key }) => [key, { passed: 0, failed: 0 }]),
+);
 
 const sortedEntries = Object.entries(testResults).sort(([a], [b]) => isOfficial(b) - isOfficial(a));
 
@@ -78,11 +84,13 @@ for (const [pkg, result] of sortedEntries) {
 	const pkgLabel = isOfficial(pkg) ? `\`${pkg}\` ⭐` : `\`${pkg}\``;
 
 	packageLines.push(
-		`| ${pkgLabel} | ${npmBadge(pkg)} | ${repoLink(pkg)} | ${statusEmoji(result.latest?.status)} | ${statusEmoji(result.next?.status)} |`,
+		`| ${pkgLabel} | ${npmBadge(pkg)} | ${repoLink(pkg)} | ${stylelintTargets
+			.map(({ key }) => statusEmoji(result[key]?.status))
+			.join(' | ')} |`,
 	);
 	packagesCount += 1;
 
-	for (const key of ['latest', 'next']) {
+	for (const { key } of stylelintTargets) {
 		switch (result[key]?.status) {
 			case 'success':
 				counts[key].passed += 1;
@@ -94,16 +102,16 @@ for (const [pkg, result] of sortedEntries) {
 	}
 }
 
-function testSummaryLine(version, passed, failed) {
-	return `- **Stylelint ${version}**: ${statusEmoji('success')} ${passed} passed, ${statusEmoji('failure')} ${failed} failed`;
+function testSummaryLine(label, passed, failed) {
+	return `- **${label}**: ${statusEmoji('success')} ${passed} passed, ${statusEmoji('failure')} ${failed} failed`;
 }
 
 packageLines.push('');
 packageLines.push(`Total ${packagesCount} packages.`);
-packageLines.push(
-	testSummaryLine(latestStylelintVersion, counts.latest.passed, counts.latest.failed),
-);
-packageLines.push(testSummaryLine('HEAD', counts.next.passed, counts.next.failed));
+
+for (const { key, label } of stylelintTargets) {
+	packageLines.push(testSummaryLine(label, counts[key].passed, counts[key].failed));
+}
 
 const readmeFile = path.relative(
 	process.cwd(),
