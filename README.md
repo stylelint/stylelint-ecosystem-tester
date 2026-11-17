@@ -12,6 +12,9 @@ Each package is tested daily against the previous major, latest, and next Stylel
 - ❔ unknown
 - ⭐ official package
 
+> [!NOTE]
+> Tests run against each package's default branch, so the results reflect its latest development state, not its latest published version.
+
 ## Packages
 
 [![Latest Stylelint](https://img.shields.io/npm/v/stylelint.svg?label=Latest+Stylelint)](https://www.npmjs.com/package/stylelint)
