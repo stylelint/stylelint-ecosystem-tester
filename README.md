@@ -38,7 +38,7 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 | `stylelint-config-property-sort-order-smacss`       | [![stylelint-config-property-sort-order-smacss](https://img.shields.io/npm/v/stylelint-config-property-sort-order-smacss.svg)](https://www.npmjs.com/package/stylelint-config-property-sort-order-smacss)                   | [github](https://github.com/cahamilton/stylelint-config-property-sort-order-smacss)          |        ✅        |       ✅       |
 | `stylelint-config-recess-order`                     | [![stylelint-config-recess-order](https://img.shields.io/npm/v/stylelint-config-recess-order.svg)](https://www.npmjs.com/package/stylelint-config-recess-order)                                                             | [github](https://github.com/stormwarning/stylelint-config-recess-order)                      |        ✅        |       ✅       |
 | `stylelint-config-sass-guidelines`                  | [![stylelint-config-sass-guidelines](https://img.shields.io/npm/v/stylelint-config-sass-guidelines.svg)](https://www.npmjs.com/package/stylelint-config-sass-guidelines)                                                    | [github](https://github.com/bjankord/stylelint-config-sass-guidelines)                       |        ❌        |       ❌       |
-| `stylelint-config-standard-scss`                    | [![stylelint-config-standard-scss](https://img.shields.io/npm/v/stylelint-config-standard-scss.svg)](https://www.npmjs.com/package/stylelint-config-standard-scss)                                                          | [github](https://github.com/stylelint-scss/stylelint-config-standard-scss)                   |        ❌        |       ❌       |
+| `stylelint-config-standard-scss`                    | [![stylelint-config-standard-scss](https://img.shields.io/npm/v/stylelint-config-standard-scss.svg)](https://www.npmjs.com/package/stylelint-config-standard-scss)                                                          | [github](https://github.com/stylelint-scss/stylelint-config-standard-scss)                   |        ✅        |       ✅       |
 | `stylelint-config-standard-vue`                     | [![stylelint-config-standard-vue](https://img.shields.io/npm/v/stylelint-config-standard-vue.svg)](https://www.npmjs.com/package/stylelint-config-standard-vue)                                                             | [github](https://github.com/ota-meshi/stylelint-config-standard-vue)                         |        ❌        |       ❌       |
 | `stylelint-config-twbs-bootstrap`                   | [![stylelint-config-twbs-bootstrap](https://img.shields.io/npm/v/stylelint-config-twbs-bootstrap.svg)](https://www.npmjs.com/package/stylelint-config-twbs-bootstrap)                                                       | [github](https://github.com/twbs/stylelint-config-twbs-bootstrap)                            |        ❌        |       ❌       |
 | `stylelint-config-wikimedia`                        | [![stylelint-config-wikimedia](https://img.shields.io/npm/v/stylelint-config-wikimedia.svg)](https://www.npmjs.com/package/stylelint-config-wikimedia)                                                                      | [github](https://github.com/wikimedia/stylelint-config-wikimedia)                            |        ❌        |       ❌       |
@@ -64,8 +64,8 @@ Each package is tested daily against the latest and next Stylelint by the [test 
 
 Total 41 packages.
 
-- **Stylelint 18.0.0**: ✅ 32 passed, ❌ 9 failed
-- **Stylelint HEAD**: ✅ 31 passed, ❌ 10 failed
+- **Stylelint 18.0.0**: ✅ 33 passed, ❌ 8 failed
+- **Stylelint HEAD**: ✅ 32 passed, ❌ 9 failed
 
 <!-- END:PACKAGES -->
 
