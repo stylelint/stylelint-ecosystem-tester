@@ -1,6 +1,7 @@
 import process from 'node:process';
 
 import ecosystemData from './utils/ecosystemData.js';
+import stylelintVersions from './utils/stylelintVersions.js';
 
 const inputPackageNames = new Set(
 	(process.argv[2] ?? '')
@@ -69,7 +70,13 @@ for (const [name, info] of Object.entries(packages)) {
 	};
 }
 
+const { previousMajor } = stylelintVersions;
+
 const stylelint = {
+	previous: {
+		'stylelint-install': `stylelint@${previousMajor}`,
+		'stylelint-package-spec': previousMajor,
+	},
 	latest: {
 		'stylelint-install': 'stylelint@latest',
 		'stylelint-package-spec': 'latest',
@@ -80,11 +87,11 @@ const stylelint = {
 	},
 };
 
-const stylelintVersions = new Set(Object.keys(stylelint));
+const knownStylelintVersions = new Set(Object.keys(stylelint));
 
 for (const [name, info] of Object.entries(packages)) {
 	for (const [version, ref] of Object.entries(info.refs ?? {})) {
-		if (!stylelintVersions.has(version)) {
+		if (!knownStylelintVersions.has(version)) {
 			throw new Error(`Unknown Stylelint version "${version}" in refs for "${name}"`);
 		}
 
