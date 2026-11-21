@@ -57,7 +57,7 @@ stylelint-test-rule-node:
     status: success
 '@stylistic/stylelint-plugin':
   latest:
-    status: success
+    status: failure
   next:
     status: failure
   previous:
