@@ -194,7 +194,7 @@ stylelint-formatter-pretty:
   next:
     status: success
   previous:
-    status: success
+    status: failure
 stylelint-high-performance-animation:
   latest:
     status: success
