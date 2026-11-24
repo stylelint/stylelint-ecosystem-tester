@@ -31,7 +31,7 @@ Each package is tested daily against the previous major, latest, and next Stylel
 | `@primer/stylelint-config`                          | [![@primer/stylelint-config](https://img.shields.io/npm/v/@primer/stylelint-config.svg)](https://www.npmjs.com/package/@primer/stylelint-config)                                                                            | [github](https://github.com/primer/stylelint-config)                                         |        ❌         |        ❌        |       ❌       |
 | `@shopify/stylelint-plugin`                         | [![@shopify/stylelint-plugin](https://img.shields.io/npm/v/@shopify/stylelint-plugin.svg)](https://www.npmjs.com/package/@shopify/stylelint-plugin)                                                                         | [github](https://github.com/Shopify/web-configs/tree/HEAD/packages/stylelint-plugin)         |        ❌         |        ❌        |       ❌       |
 | `@stylistic/stylelint-config`                       | [![@stylistic/stylelint-config](https://img.shields.io/npm/v/@stylistic/stylelint-config.svg)](https://www.npmjs.com/package/@stylistic/stylelint-config)                                                                   | [github](https://github.com/stylelint-stylistic/stylelint-config)                            |        ✅         |        ✅        |       ✅       |
-| `@stylistic/stylelint-plugin`                       | [![@stylistic/stylelint-plugin](https://img.shields.io/npm/v/@stylistic/stylelint-plugin.svg)](https://www.npmjs.com/package/@stylistic/stylelint-plugin)                                                                   | [github](https://github.com/stylelint-stylistic/stylelint-stylistic)                         |        ❌         |        ❌        |       ❌       |
+| `@stylistic/stylelint-plugin`                       | [![@stylistic/stylelint-plugin](https://img.shields.io/npm/v/@stylistic/stylelint-plugin.svg)](https://www.npmjs.com/package/@stylistic/stylelint-plugin)                                                                   | [github](https://github.com/stylelint-stylistic/stylelint-stylistic)                         |        ❌         |        ✅        |       ✅       |
 | `@wordpress/stylelint-config`                       | [![@wordpress/stylelint-config](https://img.shields.io/npm/v/@wordpress/stylelint-config.svg)](https://www.npmjs.com/package/@wordpress/stylelint-config)                                                                   | [github](https://github.com/WordPress/gutenberg/tree/HEAD/packages/stylelint-config)         |        ❌         |        ❌        |       ❌       |
 | `nx-stylelint`                                      | [![nx-stylelint](https://img.shields.io/npm/v/nx-stylelint.svg)](https://www.npmjs.com/package/nx-stylelint)                                                                                                                | [github](https://github.com/Phillip9587/nx-stylelint)                                        |        ✅         |        ✅        |       ✅       |
 | `stylelint-actions-formatters`                      | [![stylelint-actions-formatters](https://img.shields.io/npm/v/stylelint-actions-formatters.svg)](https://www.npmjs.com/package/stylelint-actions-formatters)                                                                | [github](https://github.com/xt0rted/stylelint-actions-formatters)                            |        ✅         |        ✅        |       ✅       |
@@ -68,8 +68,8 @@ Each package is tested daily against the previous major, latest, and next Stylel
 Total 41 packages.
 
 - **Stylelint 17.16.0**: ✅ 30 passed, ❌ 11 failed
-- **Stylelint 18.1.0**: ✅ 32 passed, ❌ 9 failed
-- **Stylelint HEAD**: ✅ 32 passed, ❌ 9 failed
+- **Stylelint 18.1.0**: ✅ 33 passed, ❌ 8 failed
+- **Stylelint HEAD**: ✅ 33 passed, ❌ 8 failed
 
 <!-- END:PACKAGES -->
 
