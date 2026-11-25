@@ -57,7 +57,7 @@ Each package is tested daily against the previous major, latest, and next Stylel
 | `stylelint-no-unsupported-browser-features`         | [![stylelint-no-unsupported-browser-features](https://img.shields.io/npm/v/stylelint-no-unsupported-browser-features.svg)](https://www.npmjs.com/package/stylelint-no-unsupported-browser-features)                         | [github](https://github.com/RJWadley/stylelint-no-unsupported-browser-features)              |        ✅         |        ✅        |       ✅       |
 | `stylelint-order`                                   | [![stylelint-order](https://img.shields.io/npm/v/stylelint-order.svg)](https://www.npmjs.com/package/stylelint-order)                                                                                                       | [github](https://github.com/hudochenkov/stylelint-order)                                     |        ✅         |        ✅        |       ✅       |
 | `stylelint-plugin-defensive-css`                    | [![stylelint-plugin-defensive-css](https://img.shields.io/npm/v/stylelint-plugin-defensive-css.svg)](https://www.npmjs.com/package/stylelint-plugin-defensive-css)                                                          | [github](https://github.com/yuschick/stylelint-plugin-defensive-css)                         |        ✅         |        ✅        |       ✅       |
-| `stylelint-plugin-use-baseline`                     | [![stylelint-plugin-use-baseline](https://img.shields.io/npm/v/stylelint-plugin-use-baseline.svg)](https://www.npmjs.com/package/stylelint-plugin-use-baseline)                                                             | [github](https://github.com/ryo-manba/stylelint-plugin-use-baseline)                         |        ✅         |        ✅        |       ✅       |
+| `stylelint-plugin-use-baseline`                     | [![stylelint-plugin-use-baseline](https://img.shields.io/npm/v/stylelint-plugin-use-baseline.svg)](https://www.npmjs.com/package/stylelint-plugin-use-baseline)                                                             | [github](https://github.com/ryo-manba/stylelint-plugin-use-baseline)                         |        ❌         |        ❌        |       ❌       |
 | `stylelint-prettier`                                | [![stylelint-prettier](https://img.shields.io/npm/v/stylelint-prettier.svg)](https://www.npmjs.com/package/stylelint-prettier)                                                                                              | [github](https://github.com/prettier/stylelint-prettier)                                     |        ✅         |        ✅        |       ✅       |
 | `stylelint-scss`                                    | [![stylelint-scss](https://img.shields.io/npm/v/stylelint-scss.svg)](https://www.npmjs.com/package/stylelint-scss)                                                                                                          | [github](https://github.com/stylelint-scss/stylelint-scss)                                   |        ✅         |        ✅        |       ✅       |
 | `stylelint-selector-bem-pattern`                    | [![stylelint-selector-bem-pattern](https://img.shields.io/npm/v/stylelint-selector-bem-pattern.svg)](https://www.npmjs.com/package/stylelint-selector-bem-pattern)                                                          | [github](https://github.com/simonsmith/stylelint-selector-bem-pattern)                       |        ✅         |        ✅        |       ✅       |
@@ -67,9 +67,9 @@ Each package is tested daily against the previous major, latest, and next Stylel
 
 Total 41 packages.
 
-- **Stylelint 17.16.0**: ✅ 30 passed, ❌ 11 failed
-- **Stylelint 18.1.0**: ✅ 33 passed, ❌ 8 failed
-- **Stylelint HEAD**: ✅ 33 passed, ❌ 8 failed
+- **Stylelint 17.16.0**: ✅ 29 passed, ❌ 12 failed
+- **Stylelint 18.1.0**: ✅ 32 passed, ❌ 9 failed
+- **Stylelint HEAD**: ✅ 32 passed, ❌ 9 failed
 
 <!-- END:PACKAGES -->
 
