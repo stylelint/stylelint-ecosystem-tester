@@ -239,11 +239,11 @@ stylelint-plugin-defensive-css:
     status: success
 stylelint-plugin-use-baseline:
   latest:
-    status: success
+    status: failure
   next:
-    status: success
+    status: failure
   previous:
-    status: success
+    status: failure
 stylelint-prettier:
   latest:
     status: success
