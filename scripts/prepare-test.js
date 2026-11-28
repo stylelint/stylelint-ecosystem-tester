@@ -44,8 +44,7 @@ const DEFAULT_PACKAGE_INFO = {
 const ADVANCED_PACKAGE_INFO = {
 	pnpm: {
 		'install-deps-command': 'pnpm install --ignore-scripts --no-frozen-lockfile',
-		// TODO: Add --min-release-age after it's implemented. Ref: https://github.com/pnpm/pnpm/issues/11224
-		'install-stylelint-command': 'pnpm add --ignore-scripts',
+		'install-stylelint-command': 'pnpm add --ignore-scripts --minimum-release-age=1',
 		'list-command': 'pnpm list stylelint',
 		'build-command': 'pnpm run --if-present build',
 		'test-command': 'pnpm test',
