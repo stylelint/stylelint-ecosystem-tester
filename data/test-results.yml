@@ -50,11 +50,11 @@ stylelint-test-rule-node:
     status: failure
 '@stylistic/stylelint-config':
   latest:
-    status: success
+    status: failure
   next:
-    status: success
+    status: failure
   previous:
-    status: success
+    status: failure
 '@stylistic/stylelint-plugin':
   latest:
     status: success
